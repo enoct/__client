@@ -7,6 +7,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [LoginFormComponent, LoginPageComponent],
-  imports: [CommonModule, LoginRoutingModule]
+  imports     : [CommonModule, LoginRoutingModule]
 })
 export class LoginModule {}
