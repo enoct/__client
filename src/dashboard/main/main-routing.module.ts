@@ -6,12 +6,12 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainPageComponent,
+    path       : '',
+    component  : MainPageComponent,
     canActivate: [AuthGuard],
-    data: {
+    data       : {
       meta: {
-        title: 'PUBLIC.SECURE.PAGE_TITLE',
+        title      : 'PUBLIC.SECURE.PAGE_TITLE',
         description: 'PUBLIC.SECURE.META_DESCRIPTION'
       }
     }

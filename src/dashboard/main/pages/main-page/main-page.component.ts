@@ -3,10 +3,10 @@ import { BaseComponent } from '~/@enoct/framework/core';
 import { routeAnimation } from '~/@enoct/shared';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss'],
+  selector       : 'app-main-page',
+  templateUrl    : './main-page.component.html',
+  styleUrls      : ['./main-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [routeAnimation]
+  animations     : [routeAnimation]
 })
 export class MainPageComponent extends BaseComponent {}
