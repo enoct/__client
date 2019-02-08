@@ -1,7 +1,7 @@
 {
-  "name": "signoir/angband",
+  "name": "angband",
   "version": "0.2.0",
-  "description": "Seed project for Angular Universal apps featuring Server-Side Rendering (SSR), Webpack, CLI scaffolding, dev/prod modes, AoT compilation, HMR, SCSS compilation, lazy loading, config, cache, i18n, SEO, and TSLint/codelyzer",
+  "description": "",
   "repository": {
     "type": "git",
     "url": "https://github.com/signoir/angband.git"
