@@ -7,9 +7,9 @@ import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
   declarations: [MainComponent, HeaderComponent],
-  imports: [
+  imports     : [
     CommonModule,
     BasicRoutingModule
   ]
 })
-export class BasicModule { }
+export class BasicModule {}
