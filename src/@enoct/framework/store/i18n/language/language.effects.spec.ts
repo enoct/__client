@@ -3,12 +3,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Actions } from '@ngrx/effects';
 import { ConfigService } from '@ngx-config/core';
 import { cold, hot } from 'jasmine-marbles';
-import { AnalyticsModule } from '~/app/framework/analytics';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { I18NTestingModule } from '~/app/framework/i18n/testing';
-import { NgrxTestingModule } from '~/app/framework/ngrx/testing';
-import { languageActions } from '~/app/framework/store';
-import { t } from '~/app/framework/testing';
+import { AnalyticsModule } from '~/@enoct/framework/analytics';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
+import { NgrxTestingModule } from '~/@enoct/framework/ngrx/testing';
+import { languageActions } from '~/@enoct/framework/store';
+import { t } from '~/@enoct/framework/testing';
 
 import { I18NService } from '../../../i18n/i18n.service';
 
@@ -16,7 +16,7 @@ import { LanguageEffects } from './language.effects';
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, CoreTestingModule, NgrxTestingModule, I18NTestingModule, AnalyticsModule],
+    imports  : [RouterTestingModule, CoreTestingModule, NgrxTestingModule, I18NTestingModule, AnalyticsModule],
     providers: [LanguageEffects]
   });
 };
@@ -37,15 +37,15 @@ t.describe('LanguageEffects', () => {
     t.it(
       'should dispatch `use` action',
       t.inject([LanguageEffects, ConfigService], (effects: LanguageEffects, config: ConfigService) => {
-        const settings = config.getSettings('i18n');
+        const settings        = config.getSettings('i18n');
         const defaultLanguage = settings.defaultLanguage;
 
-        const action = languageActions.i18nInitLanguage(settings);
+        const action     = languageActions.i18nInitLanguage(settings);
         const completion = languageActions.i18nUseLanguage(defaultLanguage.code);
 
-        const actions$ = TestBed.get(Actions);
-        actions$.stream = hot('-a', { a: action });
-        const expected = cold('-c', { c: completion });
+        const actions$  = TestBed.get(Actions);
+        actions$.stream = hot('-a', {a: action});
+        const expected  = cold('-c', {c: completion});
 
         t.e(effects.init$).toBeObservable(expected);
       })
@@ -58,12 +58,12 @@ t.describe('LanguageEffects', () => {
       t.inject([LanguageEffects], (effects: LanguageEffects) => {
         const unsupportedLanguageCode = 'xx';
 
-        const action = languageActions.i18nUseLanguage(unsupportedLanguageCode);
+        const action     = languageActions.i18nUseLanguage(unsupportedLanguageCode);
         const completion = languageActions.i18nUseLanguageFail(unsupportedLanguageCode);
 
-        const actions$ = TestBed.get(Actions);
-        actions$.stream = hot('-a', { a: action });
-        const expected = cold('-c', { c: completion });
+        const actions$  = TestBed.get(Actions);
+        actions$.stream = hot('-a', {a: action});
+        const expected  = cold('-c', {c: completion});
 
         t.e(effects.use$).toBeObservable(expected);
       })
@@ -73,19 +73,23 @@ t.describe('LanguageEffects', () => {
   t.describe('use$', () => {
     t.it(
       'should dispatch `useSuccess` action w/selected `Language`, on success',
-      t.inject([LanguageEffects, ConfigService, I18NService], (effects: LanguageEffects, config: ConfigService, i18n: I18NService) => {
-        const settings = config.getSettings('i18n');
+      t.inject([LanguageEffects, ConfigService, I18NService], (
+        effects: LanguageEffects,
+        config: ConfigService,
+        i18n: I18NService
+      ) => {
+        const settings        = config.getSettings('i18n');
         const defaultLanguage = settings.defaultLanguage;
 
-        i18n.defaultLanguage = defaultLanguage;
+        i18n.defaultLanguage    = defaultLanguage;
         i18n.availableLanguages = settings.availableLanguages;
 
-        const action = languageActions.i18nUseLanguage(defaultLanguage.code);
+        const action     = languageActions.i18nUseLanguage(defaultLanguage.code);
         const completion = languageActions.i18nUseLanguageSuccess(defaultLanguage);
 
-        const actions$ = TestBed.get(Actions);
-        actions$.stream = hot('-a', { a: action });
-        const expected = cold('-c', { c: completion });
+        const actions$  = TestBed.get(Actions);
+        actions$.stream = hot('-a', {a: action});
+        const expected  = cold('-c', {c: completion});
 
         t.e(effects.use$).toBeObservable(expected);
       })
@@ -93,20 +97,24 @@ t.describe('LanguageEffects', () => {
 
     t.it(
       'should dispatch `useSuccess` action w/default `Language`, on fail',
-      t.inject([LanguageEffects, ConfigService, I18NService], (effects: LanguageEffects, config: ConfigService, i18n: I18NService) => {
-        const settings = config.getSettings('i18n');
-        const defaultLanguage = settings.defaultLanguage;
+      t.inject([LanguageEffects, ConfigService, I18NService], (
+        effects: LanguageEffects,
+        config: ConfigService,
+        i18n: I18NService
+      ) => {
+        const settings                = config.getSettings('i18n');
+        const defaultLanguage         = settings.defaultLanguage;
         const unsupportedLanguageCode = 'xx';
 
-        i18n.defaultLanguage = defaultLanguage;
+        i18n.defaultLanguage    = defaultLanguage;
         i18n.availableLanguages = settings.availableLanguages;
 
-        const action = languageActions.i18nUseLanguage(unsupportedLanguageCode);
+        const action     = languageActions.i18nUseLanguage(unsupportedLanguageCode);
         const completion = languageActions.i18nUseLanguageSuccess(defaultLanguage);
 
-        const actions$ = TestBed.get(Actions);
-        actions$.stream = hot('-a', { a: action });
-        const expected = cold('-c', { c: completion });
+        const actions$  = TestBed.get(Actions);
+        actions$.stream = hot('-a', {a: action});
+        const expected  = cold('-c', {c: completion});
 
         t.e(effects.use$).toBeObservable(expected);
       })

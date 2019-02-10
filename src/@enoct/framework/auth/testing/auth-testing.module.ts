@@ -7,45 +7,43 @@ import { MockJwtInterceptor } from './mocks/jwt-interceptor.mock';
 import { MOCK_AUTH_PATH } from './tokens';
 
 @NgModule({
-  imports: [HttpClientModule],
-  exports: [AuthModule],
+  imports  : [HttpClientModule],
+  exports  : [AuthModule],
   providers: [
     {
-      provide: MOCK_AUTH_PATH,
+      provide : MOCK_AUTH_PATH,
       useValue: '/api/authenticate'
     },
     {
-      provide: AuthLoader,
+      provide   : AuthLoader,
       useFactory: authFactory
     },
     {
-      provide: HTTP_INTERCEPTORS,
+      provide : HTTP_INTERCEPTORS,
       useClass: MockBackendInterceptor,
-      deps: [MOCK_AUTH_PATH],
-      multi: true
+      deps    : [MOCK_AUTH_PATH],
+      multi   : true
     },
     {
-      provide: HTTP_INTERCEPTORS,
+      provide : HTTP_INTERCEPTORS,
       useClass: MockJwtInterceptor,
-      deps: [AuthLoader],
-      multi: true
+      deps    : [AuthLoader],
+      multi   : true
     }
   ]
 })
 export class AuthTestingModule {
-  static withParams(
-    configuredProvider = {
-      provide: AuthLoader,
-      useFactory: authFactory
-    },
-    path: string
-  ): ModuleWithProviders {
+  static withParams(configuredProvider = {
+                      provide   : AuthLoader,
+                      useFactory: authFactory
+                    },
+                    path: string): ModuleWithProviders {
     return {
-      ngModule: AuthTestingModule,
+      ngModule : AuthTestingModule,
       providers: [
         configuredProvider,
         {
-          provide: MOCK_AUTH_PATH,
+          provide : MOCK_AUTH_PATH,
           useValue: path
         }
       ]

@@ -4,39 +4,39 @@ import { TestBed } from '@angular/core/testing';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { ConfigService } from '@ngx-config/core';
 import { configureTestSuite } from 'ng-bullet';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { MockService } from './testing';
 import { getAbsolutePath, getBaseUrl, UniversalInterceptor } from './universal.interceptor';
 
-const MOCK_BASE_URL = 'https://yourdomain.com';
+const MOCK_BASE_URL     = 'https://yourdomain.com';
 const MOCK_REQUEST: any = {
   protocol: 'https',
-  get: () => 'yourdomain.com'
+  get     : () => 'yourdomain.com'
 };
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule, CoreTestingModule.withOptions()],
+    imports  : [HttpClientTestingModule, CoreTestingModule.withOptions()],
     providers: [
       {
-        provide: MockService,
+        provide   : MockService,
         useFactory: (config: ConfigService, http: HttpClient) => new MockService(config, http, 'backend.test.local'),
-        deps: [ConfigService, HttpClient]
+        deps      : [ConfigService, HttpClient]
       },
       UniversalInterceptor,
       {
-        provide: REQUEST,
+        provide   : REQUEST,
         useFactory: () => ({
           protocol: 'http',
-          get: () => 'localhost:4200'
+          get     : () => 'localhost:4200'
         })
       },
       {
-        provide: HTTP_INTERCEPTORS,
+        provide : HTTP_INTERCEPTORS,
         useClass: UniversalInterceptor,
-        multi: true
+        multi   : true
       }
     ]
   });
@@ -52,8 +52,8 @@ t.describe('getBaseUrl', () => {
 
 t.describe('getAbsolutePath for `browser` platform', () => {
   t.it('should bypass the request', () => {
-    const request = new HttpRequest<any>('GET', './test');
-    const res = getAbsolutePath(MOCK_REQUEST)(request)(false);
+    const request  = new HttpRequest<any>('GET', './test');
+    const res      = getAbsolutePath(MOCK_REQUEST)(request)(false);
     const expected = './test';
 
     t.e(res.url).toEqual(expected);
@@ -62,16 +62,16 @@ t.describe('getAbsolutePath for `browser` platform', () => {
 
 t.describe('getAbsolutePath for `server` platform', () => {
   t.it('should return an intercepted request with `baseServerUrl`', () => {
-    const request = new HttpRequest<any>('GET', './test');
-    const res = getAbsolutePath(MOCK_REQUEST)(request)(true);
+    const request  = new HttpRequest<any>('GET', './test');
+    const res      = getAbsolutePath(MOCK_REQUEST)(request)(true);
     const expected = `${MOCK_BASE_URL}/test`;
 
     t.e(res.url).toEqual(expected);
   });
 
   t.it('should bypass the request when the request has absolute url', () => {
-    const request = new HttpRequest<any>('GET', `${MOCK_BASE_URL}/test`);
-    const res = getAbsolutePath(MOCK_REQUEST)(request)(true);
+    const request  = new HttpRequest<any>('GET', `${MOCK_BASE_URL}/test`);
+    const res      = getAbsolutePath(MOCK_REQUEST)(request)(true);
     const expected = `${MOCK_BASE_URL}/test`;
 
     t.e(res.url).toEqual(expected);
@@ -94,7 +94,7 @@ t.describe('UniversalInterceptor', () => {
           t.e(res).toBeTruthy();
         });
 
-        const actual = http.expectOne({ method: 'GET' });
+        const actual   = http.expectOne({method: 'GET'});
         const expected = './test';
 
         t.e(actual.request.url).toEqual(expected);

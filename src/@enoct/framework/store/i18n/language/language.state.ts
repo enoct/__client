@@ -11,5 +11,5 @@ export interface State {
 export const initialState: State = {
   selectedItem: initialLanguage,
   isProcessing: false,
-  error: undefined
+  error       : undefined
 };

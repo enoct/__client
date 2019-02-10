@@ -5,7 +5,7 @@ export interface Language {
 }
 
 export const initialLanguage: Language = {
-  code: '',
-  name: '',
+  code   : '',
+  name   : '',
   culture: ''
 };

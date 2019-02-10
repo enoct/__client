@@ -3,7 +3,7 @@ import { InjectionToken } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { ConfigLoader, ConfigModule, ConfigService, ConfigStaticLoader } from '@ngx-config/core';
-import { t } from '~/app/framework/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { ConsoleService } from './console.service';
 import { LogService } from './log.service';
@@ -15,23 +15,23 @@ const testModuleConfig = (logLevel: LogLevel) => {
   TestBed.resetTestEnvironment();
 
   TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting()).configureTestingModule({
-    imports: [
+    imports  : [
       ConfigModule.forRoot({
-        provide: ConfigLoader,
+        provide   : ConfigLoader,
         useFactory: () =>
           new ConfigStaticLoader({
-            logging: { level: logLevel }
+            logging: {level: logLevel}
           }),
-        deps: [LOG_LEVEL]
+        deps      : [LOG_LEVEL]
       })
     ],
     providers: [
       {
-        provide: LOG_LEVEL,
+        provide : LOG_LEVEL,
         useValue: logLevel
       },
       {
-        provide: ConsoleService,
+        provide : ConsoleService,
         useValue: console
       },
       LogService
@@ -63,7 +63,7 @@ t.describe('LogService', () => {
     testModuleConfig(0);
 
     const config = TestBed.get(ConfigService);
-    const log = TestBed.get(LogService);
+    const log    = TestBed.get(LogService);
 
     config.init().then(() => {
       log.debug('debug');
@@ -88,7 +88,7 @@ t.describe('LogService', () => {
     testModuleConfig(LogLevel.Debug);
 
     const config = TestBed.get(ConfigService);
-    const log = TestBed.get(LogService);
+    const log    = TestBed.get(LogService);
 
     config.init().then(() => {
       // should allow this level
@@ -115,7 +115,7 @@ t.describe('LogService', () => {
     testModuleConfig(LogLevel.Error);
 
     const config = TestBed.get(ConfigService);
-    const log = TestBed.get(LogService);
+    const log    = TestBed.get(LogService);
 
     config.init().then(() => {
       // never allows upper levels
@@ -143,7 +143,7 @@ t.describe('LogService', () => {
     testModuleConfig(LogLevel.Warn);
 
     const config = TestBed.get(ConfigService);
-    const log = TestBed.get(LogService);
+    const log    = TestBed.get(LogService);
 
     config.init().then(() => {
       // never allows upper levels
@@ -171,7 +171,7 @@ t.describe('LogService', () => {
     testModuleConfig(LogLevel.Info);
 
     const config = TestBed.get(ConfigService);
-    const log = TestBed.get(LogService);
+    const log    = TestBed.get(LogService);
 
     config.init().then(() => {
       // never allows upper levels

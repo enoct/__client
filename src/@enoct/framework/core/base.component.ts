@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
-import { BaseDocument, UniqueId } from '~/app/framework/ngrx';
+import { BaseDocument, UniqueId } from '~/@enoct/framework/ngrx';
 
 @Component({
-  template: '',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent implements OnDestroy {

@@ -5,19 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 export const APP_LAYOUT_CONFIG = {
-  addFlexToParent: true,
-  addOrientationBps: false,
-  disableDefaultBps: false,
+  addFlexToParent      : true,
+  addOrientationBps    : false,
+  disableDefaultBps    : false,
   disableVendorPrefixes: false,
-  serverLoaded: false,
-  useColumnBasisZero: false
+  serverLoaded         : false,
+  useColumnBasisZero   : false
 };
 
 @NgModule({
-  exports: [CommonModule, FormsModule, FlexLayoutModule, TranslateModule],
+  exports  : [CommonModule, FormsModule, FlexLayoutModule, TranslateModule],
   providers: [
     {
-      provide: LAYOUT_CONFIG,
+      provide : LAYOUT_CONFIG,
       useValue: APP_LAYOUT_CONFIG
     }
   ]

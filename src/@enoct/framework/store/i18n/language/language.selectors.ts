@@ -5,11 +5,11 @@ import { LANGUAGE, State } from './language.state';
 
 const getState = createFeatureSelector<State>(LANGUAGE);
 
-export const getIsProcessing = createSelector(
+export const getIsProcessing    = createSelector(
   getState,
   state => get('isProcessing')(state) || false
 );
-export const getError = createSelector(
+export const getError           = createSelector(
   getState,
   state => get('error')(state)
 );

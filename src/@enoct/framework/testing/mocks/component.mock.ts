@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  template: '',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MockComponent {}

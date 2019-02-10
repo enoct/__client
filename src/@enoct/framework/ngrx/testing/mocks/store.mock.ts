@@ -10,8 +10,8 @@ export class MockStore<T extends Object> extends Store<T> {
     super(state$, actionsObserver, reducerManager);
 
     const val: any = {};
-    this.subject = new BehaviorSubject<T>(val);
-    this.source = this.subject.asObservable();
+    this.subject   = new BehaviorSubject<T>(val);
+    this.source    = this.subject.asObservable();
   }
 
   setState(nextState: T): void {

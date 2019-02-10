@@ -1,5 +1,5 @@
-import { initialLanguage } from '~/app/framework/store';
-import { t } from '~/app/framework/testing';
+import { initialLanguage } from '~/@enoct/framework/store';
+import { t } from '~/@enoct/framework/testing';
 
 import { getError, getIsProcessing, getWorkingLanguage } from './language.selectors';
 import { LANGUAGE } from './language.state';

@@ -6,14 +6,14 @@ import { MockActions } from './mocks/actions.mock';
 import { MockStore } from './mocks/store.mock';
 
 @NgModule({
-  imports: [StoreModule.forRoot({})],
+  imports  : [StoreModule.forRoot({})],
   providers: [
     {
-      provide: Store,
+      provide : Store,
       useClass: MockStore
     },
     {
-      provide: Actions,
+      provide   : Actions,
       useFactory: () => new MockActions()
     }
   ]

@@ -2,35 +2,38 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConfigService } from '@ngx-config/core';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { MockEntityService } from './testing';
 
 export const MOCK_ITEMS = [
   {
-    _id: '100000000000000000000001',
+    _id : '100000000000000000000001',
     name: 'Item #1'
   },
   {
-    _id: '100000000000000000000002',
+    _id : '100000000000000000000002',
     name: 'Item #2'
   }
 ];
 
 export const MOCK_ITEM = {
-  _id: '100000000000000000000001',
+  _id : '100000000000000000000001',
   name: 'Item #1'
 };
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule, CoreTestingModule],
+    imports  : [HttpClientTestingModule, CoreTestingModule],
     providers: [
       {
-        provide: MockEntityService,
-        useFactory: (config: ConfigService, http: HttpClient) => new MockEntityService(config, http, 'backend.test.remote'),
-        deps: [ConfigService, HttpClient]
+        provide   : MockEntityService,
+        useFactory: (
+          config: ConfigService,
+          http: HttpClient
+        ) => new MockEntityService(config, http, 'backend.test.remote'),
+        deps      : [ConfigService, HttpClient]
       }
     ]
   });
@@ -59,7 +62,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'GET',
-            url: '{baseUrl}/test'
+            url   : '{baseUrl}/test'
           })
           .flush(MOCK_ITEMS);
         http.verify();
@@ -78,7 +81,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'GET',
-            url: `{baseUrl}/test/${MOCK_ITEM._id}`
+            url   : `{baseUrl}/test/${MOCK_ITEM._id}`
           })
           .flush(MOCK_ITEM);
         http.verify();
@@ -97,7 +100,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'POST',
-            url: '{baseUrl}/test'
+            url   : '{baseUrl}/test'
           })
           .flush(MOCK_ITEMS);
         http.verify();
@@ -116,7 +119,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'POST',
-            url: '{baseUrl}/test'
+            url   : '{baseUrl}/test'
           })
           .flush(MOCK_ITEM);
         http.verify();
@@ -137,7 +140,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'PATCH',
-            url: `{baseUrl}/test/${ids.join(',')}`
+            url   : `{baseUrl}/test/${ids.join(',')}`
           })
           .flush(MOCK_ITEMS);
         http.verify();
@@ -156,7 +159,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'PATCH',
-            url: `{baseUrl}/test/${MOCK_ITEM._id}`
+            url   : `{baseUrl}/test/${MOCK_ITEM._id}`
           })
           .flush(MOCK_ITEM);
         http.verify();
@@ -177,7 +180,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'DELETE',
-            url: `{baseUrl}/test/${ids.join(',')}`
+            url   : `{baseUrl}/test/${ids.join(',')}`
           })
           .flush(ids);
         http.verify();
@@ -196,7 +199,7 @@ t.describe('BaseEntityService', () => {
         http
           .expectOne({
             method: 'DELETE',
-            url: `{baseUrl}/test/${MOCK_ITEM._id}`
+            url   : `{baseUrl}/test/${MOCK_ITEM._id}`
           })
           .flush(MOCK_ITEM._id);
         http.verify();

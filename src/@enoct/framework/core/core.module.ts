@@ -24,18 +24,18 @@ export const configFactory = (injector: Injector) => {
 
 export const metaFactory = (config: ConfigService, translate: TranslateService) =>
   new MetaStaticLoader({
-    callback: (cur: string) => translate.get(cur),
+    callback            : (cur: string) => translate.get(cur),
     pageTitlePositioning: config.getSettings('seo.pageTitlePositioning'),
-    pageTitleSeparator: config.getSettings('seo.pageTitleSeparator'),
-    applicationName: config.getSettings('system.applicationName'),
-    applicationUrl: config.getSettings('system.applicationUrl'),
-    defaults: {
-      title: config.getSettings('seo.defaultPageTitle'),
-      description: config.getSettings('seo.defaultMetaDescription'),
-      generator: 'ng-seed',
-      'og:site_name': config.getSettings('system.applicationName'),
-      'og:type': 'website',
-      'og:locale': config.getSettings('i18n.defaultLanguage.culture'),
+    pageTitleSeparator  : config.getSettings('seo.pageTitleSeparator'),
+    applicationName     : config.getSettings('system.applicationName'),
+    applicationUrl      : config.getSettings('system.applicationUrl'),
+    defaults            : {
+      title                : config.getSettings('seo.defaultPageTitle'),
+      description          : config.getSettings('seo.defaultMetaDescription'),
+      generator            : 'ng-seed',
+      'og:site_name'       : config.getSettings('system.applicationName'),
+      'og:type'            : 'website',
+      'og:locale'          : config.getSettings('i18n.defaultLanguage.culture'),
       'og:locale:alternate': config
         .getSettings('i18n.availableLanguages')
         .map((cur: any) => cur.culture)
@@ -44,9 +44,9 @@ export const metaFactory = (config: ConfigService, translate: TranslateService) 
   });
 
 @NgModule({
-  imports: [StoreModule.forRoot({}), EffectsModule.forRoot([]), ConfigModule.forRoot(), CacheModule.forRoot(), MetaModule.forRoot()],
+  imports     : [StoreModule.forRoot({}), EffectsModule.forRoot([]), ConfigModule.forRoot(), CacheModule.forRoot(), MetaModule.forRoot()],
   declarations: [BaseComponent, BaseContainerComponent],
-  providers: [
+  providers   : [
     CORE_PROVIDERS
     // I18N_ROUTER_PROVIDERS
   ]
@@ -54,7 +54,7 @@ export const metaFactory = (config: ConfigService, translate: TranslateService) 
 export class CoreModule {
   static forRoot(configuredProviders: Array<any>): ModuleWithProviders {
     return {
-      ngModule: CoreModule,
+      ngModule : CoreModule,
       providers: configuredProviders
     };
   }

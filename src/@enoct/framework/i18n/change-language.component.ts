@@ -3,16 +3,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { from as observableFrom } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { BaseComponent } from '~/app/framework/core';
-import { FrameworkState, languageActions } from '~/app/framework/store';
+import { BaseComponent } from '~/@enoct/framework/core';
+import { FrameworkState, languageActions } from '~/@enoct/framework/store';
 
 @Component({
-  selector: 'i18n-change-language',
-  template: '',
+  selector       : 'i18n-change-language',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangeLanguageComponent extends BaseComponent implements OnInit {
-  constructor(private readonly store$: Store<FrameworkState>, private readonly route: ActivatedRoute, private readonly router: Router) {
+  constructor(
+    private readonly store$: Store<FrameworkState>,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) {
     super();
   }
 

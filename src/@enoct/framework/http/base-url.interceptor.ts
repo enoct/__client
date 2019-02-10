@@ -27,7 +27,7 @@ export class BaseUrlInterceptor implements HttpInterceptor {
           isPlatformServer,
           getBaseUrl(res),
           cur => request.url.replace('{baseUrl}', cur),
-          url => request.clone({ url })
+          url => request.clone({url})
         )(this.platformId);
 
         return next.handle(intercepted);

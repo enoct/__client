@@ -8,7 +8,7 @@ export const ngE2e: TestApi = {
   xdescribe,
   be: beforeEach, // shorthand beforeEach
   beforeEach,
-  e: expect, // shorthand expect
+  e : expect, // shorthand expect
   expect,
   fail,
   it,
