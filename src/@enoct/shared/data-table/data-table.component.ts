@@ -20,9 +20,9 @@ import { DataTableBaseComponent } from './data-table-base.component';
 import { DataTableColumn } from './models/data-table-column';
 
 @Component({
-  selector: 'app-data-table',
-  templateUrl: './data-table.component.html',
-  styleUrls: ['./data-table.component.scss'],
+  selector       : 'app-data-table',
+  templateUrl    : './data-table.component.html',
+  styleUrls      : ['./data-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableComponent extends DataTableBaseComponent implements AfterViewInit, OnInit {
@@ -42,7 +42,7 @@ export class DataTableComponent extends DataTableBaseComponent implements AfterV
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource();
-    this.columns = [...this.cols.map(this.getColumnDef), ...(!isEmpty(this.buttons) ? ['actions'] : [])];
+    this.columns    = [...this.cols.map(this.getColumnDef), ...(!isEmpty(this.buttons) ? ['actions'] : [])];
   }
 
   ngAfterViewInit(): void {
@@ -56,9 +56,9 @@ export class DataTableComponent extends DataTableBaseComponent implements AfterV
 
     const filterChange$: Observable<any> = this.filterCol
       ? observableFromEvent(this.filter.nativeElement, 'keyup').pipe(
-          debounceTime(750),
-          distinctUntilChanged()
-        )
+        debounceTime(750),
+        distinctUntilChanged()
+      )
       : EMPTY;
 
     filterChange$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {

@@ -1,4 +1,4 @@
-import { Scrollable } from '~/app/shared';
+import { Scrollable } from '~/@enoct/shared';
 
 export interface DataTableOptions {
   icon?: string;
@@ -8,7 +8,12 @@ export interface DataTableOptions {
   parameters?: Array<any>;
 }
 
-export const createOptions = (icon: string, title: string, scrollable = Scrollable.None, condensed = false): DataTableOptions => ({
+export const createOptions = (
+  icon: string,
+  title: string,
+  scrollable = Scrollable.None,
+  condensed = false
+): DataTableOptions => ({
   icon,
   title,
   scrollable,

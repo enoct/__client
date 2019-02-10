@@ -10,7 +10,7 @@
   @include el('title') {
     @include truncate;
 
-    font-size: $font-size;
+    font-size : $font-size;
 
     @include mod('icon') {
       @include push--left(rem(0.5));

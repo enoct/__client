@@ -5,11 +5,11 @@
 @import '~src/assets/sass/mixin/bem';
 
 :host {
-  display: flex;
-  max-width: 100%;
-  flex: 1 1 100%;
-  flex-direction: column;
-  box-sizing: border-box;
+  display        : flex;
+  max-width      : 100%;
+  flex           : 1 1 100%;
+  flex-direction : column;
+  box-sizing     : border-box;
 }
 
 .toolbar {
@@ -17,22 +17,22 @@
 
   @include el('row') {
     @include mod('has-filter') {
-      border-right: rem(0.1) solid $black-12-opacity;
+      border-right : rem(0.1) solid $black-12-opacity;
     }
   }
 
   @include el('title') {
     @include soft--right($space--lg);
 
-    font-size: $font-size;
-    min-width: rem(14.4);
+    font-size : $font-size;
+    min-width : rem(14.4);
   }
 
   @include el('filter') {
     @include soft--sides($space--lg);
 
-    font-size: $font-size;
-    max-width: calc(100% - #{rem(14.4)});
+    font-size : $font-size;
+    max-width : calc(100% - #{rem(14.4)});
   }
 }
 
@@ -40,16 +40,16 @@
   @include mat_card;
 
   @include el('button') {
-    flex: 0 0 5%;
+    flex : 0 0 5%;
 
     @include mod('row') {
-      color: c(grey);
-      text-align: right;
+      color      : c(grey);
+      text-align : right;
     }
   }
 }
 
 .paginator {
-  font-size: $font-size;
-  background: c(grey, alabaster);
+  font-size  : $font-size;
+  background : c(grey, alabaster);
 }
