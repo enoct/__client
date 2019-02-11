@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BaseComponent } from '~/@enoct/framework/core';
 
 @Component({
-  selector   : 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls  : ['./main.component.scss']
+  selector       : 'app-main',
+  templateUrl    : './main.component.html',
+  styleUrls      : ['./main.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class MainComponent extends BaseComponent {
+  onActivate(event$: any, scrollContainer: any): void {
+    scrollContainer.scrollTop = 0;
   }
-
 }
