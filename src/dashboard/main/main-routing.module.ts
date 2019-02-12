@@ -8,7 +8,6 @@ const routes: Routes = [
   {
     path       : '',
     component  : MainPageComponent,
-    canActivate: [AuthGuard],
     data       : {
       meta: {
         title      : 'PUBLIC.SECURE.PAGE_TITLE',
