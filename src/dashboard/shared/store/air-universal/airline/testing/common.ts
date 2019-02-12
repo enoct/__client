@@ -1,5 +1,5 @@
 import { head } from 'lodash/fp';
-import { initialAirline } from '~/@enoct/store';
+import { initialAirline } from '~/dashboard/shared/store';
 
 export const MOCK_AIRLINES = [
   {
