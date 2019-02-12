@@ -4,7 +4,7 @@ import { AuthService } from '@ngx-auth/core';
 import { ConfigService } from '@ngx-config/core';
 import { Observable } from 'rxjs';
 import { BaseComponent } from '~/@enoct/framework/core';
-import { Language, LanguageSelectors, State } from '~/@enoct/store';
+import { Language, LanguageSelectors, State } from '~/dashboard/shared/store';
 
 @Component({
   selector   : 'app-header',
