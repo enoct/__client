@@ -1,4 +1,4 @@
-import { BaseDocument } from '~/app/framework/ngrx';
+import { BaseDocument } from '~/@enoct/framework/ngrx';
 
 export interface Airport extends BaseDocument {
   iataCode: string;
