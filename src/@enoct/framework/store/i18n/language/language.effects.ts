@@ -4,7 +4,7 @@ import { MetaService } from '@ngx-meta/core';
 import { TranslateService } from '@ngx-translate/core';
 import { get } from 'lodash/fp';
 import { filter, map } from 'rxjs/operators';
-import { I18NService } from '~/app/framework/i18n/i18n.service';
+import { I18NService } from '~/@enoct/framework/i18n/i18n.service';
 
 import { languageActions } from './language.actions';
 

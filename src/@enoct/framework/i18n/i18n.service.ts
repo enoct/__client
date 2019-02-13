@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { flow, isEmpty } from 'lodash/fp';
-import { Analytics, AnalyticsService } from '~/app/framework/analytics';
+import { Analytics, AnalyticsService } from '~/@enoct/framework/analytics';
 import { WindowService } from '~/@enoct/framework/core';
 import { Language } from '~/@enoct/framework/store';
 import { getOrNil } from '~/@enoct/shared';
