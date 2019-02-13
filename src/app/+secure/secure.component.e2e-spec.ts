@@ -1,5 +1,5 @@
 import { baseUrl, browser } from 'e2e-config';
-import { e2e } from '~/app/framework/testing/e2e';
+import { e2e } from '~/@enoct/framework/testing/e2e';
 
 e2e.describe('SecureComponent', () => {
   e2e.it('should redirect to login page', async () => {
