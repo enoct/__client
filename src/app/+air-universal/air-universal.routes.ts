@@ -5,39 +5,39 @@ import { AirlineComponent } from './airline/airline.component';
 
 export const routes = [
   {
-    path: '',
+    path    : '',
     children: [
       {
-        path: 'airlines',
+        path    : 'airlines',
         children: [
           {
-            path: '',
+            path     : '',
             component: AirlineComponent,
-            data: {
+            data     : {
               meta: {
-                title: 'PUBLIC.AIR_UNIVERSAL.AIRLINE.PAGE_TITLE',
+                title      : 'PUBLIC.AIR_UNIVERSAL.AIRLINE.PAGE_TITLE',
                 description: 'PUBLIC.AIR_UNIVERSAL.META_DESCRIPTION'
               }
             }
           },
           {
-            path: 'create',
+            path     : 'create',
             component: AirlineDetailContainerComponent,
-            data: {
+            data     : {
               renderFlag: RenderFlag.Create,
-              meta: {
-                title: 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_DETAIL.PAGE_TITLE',
+              meta      : {
+                title      : 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_DETAIL.PAGE_TITLE',
                 description: 'PUBLIC.AIR_UNIVERSAL.META_DESCRIPTION'
               }
             }
           },
           {
-            path: ':id',
+            path     : ':id',
             component: AirlineDetailContainerComponent,
-            data: {
+            data     : {
               renderFlag: RenderFlag.Update,
-              meta: {
-                title: 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_DETAIL.PAGE_TITLE',
+              meta      : {
+                title      : 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_DETAIL.PAGE_TITLE',
                 description: 'PUBLIC.AIR_UNIVERSAL.META_DESCRIPTION'
               }
             }

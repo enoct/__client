@@ -13,7 +13,15 @@ import { AirlineDetailComponent } from './airline/airline-detail/airline-detail.
 import { AirlineComponent } from './airline/airline.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, RouterModule.forChild(routes), MaterialModule, CardModule, DataTableModule, SharedModule],
+  imports     : [
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes),
+    MaterialModule,
+    CardModule,
+    DataTableModule,
+    SharedModule
+  ],
   declarations: [AirlineDetailContainerComponent, AirlineDetailComponent, AirlineComponent]
 })
 export class AirUniversalModule {}

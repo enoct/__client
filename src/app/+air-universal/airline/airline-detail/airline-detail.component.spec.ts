@@ -16,12 +16,12 @@ import { AirlineDetailComponent } from './airline-detail.component';
 
 const testModuleConfig = (renderFlag = RenderFlag.Create) => {
   TestBed.configureTestingModule({
-    imports: [ReactiveFormsModule, CoreTestingModule, I18NTestingModule, MaterialModule, CardModule, SharedModule],
-    providers: [
+    imports     : [ReactiveFormsModule, CoreTestingModule, I18NTestingModule, MaterialModule, CardModule, SharedModule],
+    providers   : [
       {
-        provide: ActivatedRoute,
+        provide : ActivatedRoute,
         useValue: {
-          data: observableOf({
+          data  : observableOf({
             renderFlag,
             meta: {
               title: 'PAGE_TITLE'
@@ -43,7 +43,7 @@ t.describe('AirlineDetailComponent', () => {
   });
 
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AirlineDetailComponent);
+    const fixture  = TestBed.createComponent(AirlineDetailComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -51,9 +51,9 @@ t.describe('AirlineDetailComponent', () => {
   });
 
   t.it('should emit `saveClick` on save button click', () => {
-    const fixture = TestBed.createComponent(AirlineDetailComponent);
+    const fixture  = TestBed.createComponent(AirlineDetailComponent);
     const instance = fixture.componentInstance;
-    const spy = t.spyOn(instance.saveClick, 'emit');
+    const spy      = t.spyOn(instance.saveClick, 'emit');
     fixture.detectChanges();
 
     const saveButton = fixture.debugElement.query(By.css('button.qa-form__button--save'));
@@ -69,8 +69,8 @@ t.describe('airline-detail: AirlineDetailComponent for renderFlag=`Update`', () 
   });
 
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AirlineDetailComponent);
-    const instance = fixture.componentInstance;
+    const fixture    = TestBed.createComponent(AirlineDetailComponent);
+    const instance   = fixture.componentInstance;
     instance.airline = MOCK_AIRLINE;
     fixture.detectChanges();
 
@@ -78,9 +78,9 @@ t.describe('airline-detail: AirlineDetailComponent for renderFlag=`Update`', () 
   });
 
   t.it('should emit `deleteClick` on delete button click', () => {
-    const fixture = TestBed.createComponent(AirlineDetailComponent);
+    const fixture  = TestBed.createComponent(AirlineDetailComponent);
     const instance = fixture.componentInstance;
-    const spy = t.spyOn(instance.deleteClick, 'emit');
+    const spy      = t.spyOn(instance.deleteClick, 'emit');
     fixture.detectChanges();
 
     const deleteButton = fixture.debugElement.query(By.css('button.qa-form__button--delete'));

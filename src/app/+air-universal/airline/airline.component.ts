@@ -9,10 +9,10 @@ import { createColumn, createOptions, createRouteButton, DataTable } from '~/app
 import { Airline, airlineActions, AirlineSelectors, State } from '~/app/store';
 
 @Component({
-  templateUrl: './airline.component.html',
-  styleUrls: ['./airline.component.scss'],
+  templateUrl    : './airline.component.html',
+  styleUrls      : ['./airline.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [routeAnimation]
+  animations     : [routeAnimation]
 })
 export class AirlineComponent extends BaseContainerComponent implements OnInit {
   airlines$: Observable<Array<Airline>>;
@@ -27,19 +27,19 @@ export class AirlineComponent extends BaseContainerComponent implements OnInit {
     this.baseRoute = ['/', 'air-universal', 'airlines'];
 
     this.airlineTable = {
-      cols: [
+      cols     : [
         createColumn('_id', 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_TABLE.ID_COL_TITLE'),
         createColumn('iataCode', 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_TABLE.IATA_CODE_COL_TITLE'),
         createColumn('name', 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_TABLE.NAME_COL_TITLE')
       ],
       filterCol: 'name',
-      buttons: [createRouteButton('', 'edit', 'PUBLIC.SHARED.ACTION.EDIT', this.baseRoute, '_id')],
-      options: createOptions('', 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_TABLE.TITLE', Scrollable.Full)
+      buttons  : [createRouteButton('', 'edit', 'PUBLIC.SHARED.ACTION.EDIT', this.baseRoute, '_id')],
+      options  : createOptions('', 'PUBLIC.AIR_UNIVERSAL.AIRLINE.AIRLINE_TABLE.TITLE', Scrollable.Full)
     };
 
     this.isProcessing$ = this.store$.pipe(select(AirlineSelectors.getIsProcessing));
-    this.error$ = this.store$.pipe(select(AirlineSelectors.getError));
-    this.airlines$ = this.store$.pipe(select(AirlineSelectors.getMany));
+    this.error$        = this.store$.pipe(select(AirlineSelectors.getError));
+    this.airlines$     = this.store$.pipe(select(AirlineSelectors.getMany));
 
     this.store$.dispatch(airlineActions.airUniversalGetManyAirlines());
   }

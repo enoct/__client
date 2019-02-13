@@ -20,7 +20,7 @@ import { AirlineComponent } from './airline.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [
+    imports     : [
       RouterTestingModule,
       FlexModule,
       CoreTestingModule,
@@ -36,7 +36,7 @@ configureTestSuite(() => {
 
 t.describe('AirlineComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AirlineComponent);
+    const fixture  = TestBed.createComponent(AirlineComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -44,22 +44,22 @@ t.describe('AirlineComponent', () => {
   });
 
   t.it('should `getMany` from AirlineSelectors on init', () => {
-    const fixture = TestBed.createComponent(AirlineComponent);
+    const fixture  = TestBed.createComponent(AirlineComponent);
     const instance = fixture.componentInstance;
-    const store$ = TestBed.get(Store);
-    const state = getState<Airline>(AIRLINE, MOCK_AIRLINE);
+    const store$   = TestBed.get(Store);
+    const state    = getState<Airline>(AIRLINE, MOCK_AIRLINE);
     store$.setState(state);
     fixture.detectChanges();
 
-    const expected = cold('a', { a: [MOCK_AIRLINE] });
+    const expected = cold('a', {a: [MOCK_AIRLINE]});
 
     t.e(instance.airlines$).toBeObservable(expected);
   });
 
   t.it('should dispatch `airUniversalGetManyAirlines` action on init', () => {
     const fixture = TestBed.createComponent(AirlineComponent);
-    const store$ = fixture.debugElement.injector.get(Store);
-    const spy = t.spyOn(store$, 'dispatch');
+    const store$  = fixture.debugElement.injector.get(Store);
+    const spy     = t.spyOn(store$, 'dispatch');
     fixture.detectChanges();
 
     const action = airlineActions.airUniversalGetManyAirlines();
@@ -71,9 +71,9 @@ t.describe('AirlineComponent', () => {
   t.it(
     'should navigate to `create` on create button click',
     t.inject([Router], (router: Router) => {
-      const fixture = TestBed.createComponent(AirlineComponent);
+      const fixture  = TestBed.createComponent(AirlineComponent);
       const instance = fixture.componentInstance;
-      const spy = t.spyOn(router, 'navigate');
+      const spy      = t.spyOn(router, 'navigate');
       fixture.detectChanges();
 
       const menu = fixture.debugElement.query(By.css('.qa-menu'));
@@ -88,8 +88,8 @@ t.describe('AirlineComponent', () => {
 
   t.it('should dispatch `airUniversalGetManyAirlines` action on refresh button click', () => {
     const fixture = TestBed.createComponent(AirlineComponent);
-    const store$ = fixture.debugElement.injector.get(Store);
-    const spy = t.spyOn(store$, 'dispatch');
+    const store$  = fixture.debugElement.injector.get(Store);
+    const spy     = t.spyOn(store$, 'dispatch');
     fixture.detectChanges();
 
     const refreshButton = fixture.debugElement.query(By.css('button.qa-toolbar__refresh'));
