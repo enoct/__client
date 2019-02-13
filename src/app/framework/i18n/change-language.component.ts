@@ -7,8 +7,8 @@ import { BaseComponent } from '~/app/framework/core';
 import { FrameworkState, languageActions } from '~/app/framework/store';
 
 @Component({
-  selector: 'i18n-change-language',
-  template: '',
+  selector       : 'i18n-change-language',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangeLanguageComponent extends BaseComponent implements OnInit {
