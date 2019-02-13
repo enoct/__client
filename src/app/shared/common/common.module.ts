@@ -1,7 +1,7 @@
 import { CommonModule as CommonAngularModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '~/app/framework/material';
+import { MaterialModule } from '~/@enoct/framework/material';
 
 import { LoadingOverlayComponent } from './components/loading-overlay/loading-overlay.component';
 import { MenuGroupComponent } from './components/menu/menu-group.component';

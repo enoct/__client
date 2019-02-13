@@ -1,4 +1,4 @@
-import { Scrollable } from '~/app/shared';
+import { Scrollable } from '~/@enoct/shared';
 
 export interface DataTableOptions {
   icon?: string;

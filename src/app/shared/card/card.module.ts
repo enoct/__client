@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule, LAYOUT_CONFIG } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
-import { APP_LAYOUT_CONFIG } from '~/app/framework/core';
-import { MaterialModule } from '~/app/framework/material';
-import { CommonModule } from '~/app/shared';
+import { APP_LAYOUT_CONFIG } from '~/@enoct/framework/core';
+import { MaterialModule } from '~/@enoct/framework/material';
+import { CommonModule } from '~/@enoct/shared';
 
 import { CardComponent } from './card.component';
 

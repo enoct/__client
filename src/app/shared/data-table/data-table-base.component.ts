@@ -1,8 +1,8 @@
 import { EventEmitter, Input, Output } from '@angular/core';
 import { get } from 'lodash/fp';
 import { Observable } from 'rxjs';
-import { BaseComponent } from '~/app/framework/core';
-import { toSlug } from '~/app/shared';
+import { BaseComponent } from '~/@enoct/framework/core';
+import { toSlug } from '~/@enoct/shared';
 
 import { DataTableButton } from './models/data-table-button';
 import { DataTableColumn } from './models/data-table-column';
