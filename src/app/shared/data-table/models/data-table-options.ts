@@ -12,7 +12,7 @@ export const createOptions = (
   icon: string,
   title: string,
   scrollable = Scrollable.None,
-  condensed = false
+  condensed  = false
 ): DataTableOptions => ({
   icon,
   title,
