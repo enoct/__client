@@ -8,7 +8,11 @@ import { MetaLoader } from '@ngx-meta/core';
 import { TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { ANGULARTICS2_TOKEN } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import {
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface,
+  PerfectScrollbarModule
+} from 'ngx-perfect-scrollbar';
 import { AnalyticsModule } from '~/app/framework/analytics';
 import { configFactory, CoreModule, metaFactory, SharedModule } from '~/app/framework/core';
 import { HttpInterceptorModule } from '~/app/framework/http';
@@ -24,57 +28,57 @@ import { LoginComponent } from './login/login.component';
 
 export const REQ_KEY = makeStateKey<string>('req');
 
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = { suppressScrollX: true };
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppressScrollX: true};
 
 @NgModule({
-  imports: [
-    BrowserModule.withServerTransition({ appId: 'my-app-id' }),
+  imports        : [
+    BrowserModule.withServerTransition({appId: 'my-app-id'}),
     TransferHttpCacheModule,
     RouterModule.forRoot(routes),
     PerfectScrollbarModule,
     AnalyticsModule.forRoot([
       {
-        provide: ANGULARTICS2_TOKEN,
+        provide : ANGULARTICS2_TOKEN,
         useValue: {
           providers: [Angulartics2GoogleAnalytics],
-          settings: {}
+          settings : {}
         }
       }
     ]),
     CoreModule.forRoot([
       {
-        provide: ConfigLoader,
+        provide   : ConfigLoader,
         useFactory: configFactory,
-        deps: [Injector]
+        deps      : [Injector]
       },
       {
-        provide: MetaLoader,
+        provide   : MetaLoader,
         useFactory: metaFactory,
-        deps: [ConfigService, TranslateService]
+        deps      : [ConfigService, TranslateService]
       }
     ]),
     SharedModule,
     HttpInterceptorModule,
     I18NModule.forRoot([
       {
-        provide: TranslateLoader,
+        provide   : TranslateLoader,
         useFactory: translateFactory,
-        deps: [HttpClient]
+        deps      : [HttpClient]
       }
     ]),
     MaterialModule,
     StoreModule.forRoot()
   ],
-  declarations: [HeaderComponent, MainComponent, LoginComponent, AppComponent],
-  providers: [
+  declarations   : [HeaderComponent, MainComponent, LoginComponent, AppComponent],
+  providers      : [
     // I18N_ROUTER_PROVIDERS
     {
-      provide: PERFECT_SCROLLBAR_CONFIG,
+      provide : PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     }
   ],
-  exports: [AppComponent],
+  exports        : [AppComponent],
   entryComponents: [ChangeLanguageComponent],
-  bootstrap: [AppComponent]
+  bootstrap      : [AppComponent]
 })
 export class AppModule {}
