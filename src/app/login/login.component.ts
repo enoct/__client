@@ -4,8 +4,8 @@ import { AuthService } from '@ngx-auth/core';
 import { TranslateService } from '@ngx-translate/core';
 import { from as observableFrom, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { BaseComponent } from '~/app/framework/core';
-import { routeAnimation } from '~/app/shared';
+import { BaseComponent } from '~/@enoct/framework/core';
+import { routeAnimation } from '~/@enoct/shared';
 
 @Component({
   templateUrl    : './login.component.html',

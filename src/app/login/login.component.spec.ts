@@ -5,12 +5,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AuthService } from '@ngx-auth/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { configureTestSuite } from 'ng-bullet';
-import { AuthTestingModule } from '~/app/framework/auth/testing';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { I18NTestingModule } from '~/app/framework/i18n/testing';
-import { MaterialModule } from '~/app/framework/material';
-import { NgrxTestingModule } from '~/app/framework/ngrx/testing';
-import { MockComponent, t, TestingModule } from '~/app/framework/testing';
+import { AuthTestingModule } from '~/@enoct/framework/auth/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
+import { MaterialModule } from '~/@enoct/framework/material';
+import { NgrxTestingModule } from '~/@enoct/framework/ngrx/testing';
+import { MockComponent, t, TestingModule } from '~/@enoct/framework/testing';
 
 import { LoginComponent } from './login.component';
 
