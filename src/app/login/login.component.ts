@@ -8,9 +8,9 @@ import { BaseComponent } from '~/app/framework/core';
 import { routeAnimation } from '~/app/shared';
 
 @Component({
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  animations: [routeAnimation],
+  templateUrl    : './login.component.html',
+  styleUrls      : ['./login.component.scss'],
+  animations     : [routeAnimation],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent extends BaseComponent implements OnInit {
