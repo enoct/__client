@@ -7,9 +7,9 @@ import { BaseComponent } from '~/app/framework/core';
 import { Language, LanguageSelectors, State } from '~/app/store';
 
 @Component({
-  selector: 'app-header',
+  selector   : 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['header.component.scss']
+  styleUrls  : ['header.component.scss']
   // TODO: maintain immutability
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -19,15 +19,19 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   availableLanguages: Array<Language>;
   isAuthenticated: boolean; // TODO: access only through getter
 
-  constructor(private readonly store$: Store<State>, private readonly config: ConfigService, private readonly auth: AuthService) {
+  constructor(
+    private readonly store$: Store<State>,
+    private readonly config: ConfigService,
+    private readonly auth: AuthService
+  ) {
     super();
   }
 
   ngOnInit(): void {
-    this.title = 'APP_NAME';
-    this.currentLanguage$ = this.store$.pipe(select(LanguageSelectors.getWorkingLanguage));
+    this.title              = 'APP_NAME';
+    this.currentLanguage$   = this.store$.pipe(select(LanguageSelectors.getWorkingLanguage));
     this.availableLanguages = this.config.getSettings('i18n.availableLanguages');
-    this.isAuthenticated = this.auth.isAuthenticated;
+    this.isAuthenticated    = this.auth.isAuthenticated;
   }
 
   async logout(): Promise<boolean> {

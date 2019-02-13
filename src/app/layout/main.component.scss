@@ -2,10 +2,10 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow : hidden;
 }
 
 .main {
-  position: relative;
-  max-height: calc(100vh - #{rem(6.4)});
+  position   : relative;
+  max-height : calc(100vh - #{rem(6.4)});
 }

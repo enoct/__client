@@ -12,15 +12,21 @@ import { MainComponent } from './main.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, PerfectScrollbarModule, CoreTestingModule, I18NTestingModule, NgrxTestingModule],
+    imports     : [
+      RouterTestingModule,
+      PerfectScrollbarModule,
+      CoreTestingModule,
+      I18NTestingModule,
+      NgrxTestingModule
+    ],
     declarations: [MainComponent],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas     : [CUSTOM_ELEMENTS_SCHEMA]
   });
 });
 
 t.describe('layout: MainComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(MainComponent);
+    const fixture  = TestBed.createComponent(MainComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -30,7 +36,7 @@ t.describe('layout: MainComponent', () => {
   t.it(
     'should invoke `onActivate`',
     t.inject([ElementRef], (scrollContainer: ElementRef) => {
-      const fixture = TestBed.createComponent(MainComponent);
+      const fixture  = TestBed.createComponent(MainComponent);
       const instance = fixture.componentInstance;
       fixture.detectChanges();
 

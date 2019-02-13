@@ -14,18 +14,18 @@ import { HeaderComponent } from './header.component';
 
 const MOCK_ROUTES = [
   {
-    path: '',
+    path    : '',
     children: [
       {
-        path: '',
+        path     : '',
         component: MockComponent
       },
       {
-        path: 'login',
+        path     : 'login',
         component: MockComponent
       },
       {
-        path: 'change-language/:languageCode',
+        path     : 'change-language/:languageCode',
         component: MockComponent
       }
     ]
@@ -34,7 +34,7 @@ const MOCK_ROUTES = [
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [
+    imports     : [
       RouterTestingModule.withRoutes(MOCK_ROUTES),
       AuthTestingModule,
       CoreTestingModule,
@@ -49,7 +49,7 @@ configureTestSuite(() => {
 
 t.describe('layout: HeaderComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(HeaderComponent);
+    const fixture  = TestBed.createComponent(HeaderComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -57,7 +57,7 @@ t.describe('layout: HeaderComponent', () => {
   });
 
   t.it('should log out', () => {
-    const fixture = TestBed.createComponent(HeaderComponent);
+    const fixture  = TestBed.createComponent(HeaderComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 

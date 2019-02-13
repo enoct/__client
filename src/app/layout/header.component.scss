@@ -2,6 +2,6 @@
 
 .header {
   @include el('logo') {
-    vertical-align: middle;
+    vertical-align : middle;
   }
 }
