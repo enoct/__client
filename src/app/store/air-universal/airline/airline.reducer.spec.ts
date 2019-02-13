@@ -10,7 +10,7 @@ import { MOCK_AIRLINE, MOCK_AIRLINES } from './testing';
 t.describe('airline: airline.reducer', () => {
   it('should return the initial state', () => {
     const action = {} as any;
-    const res = reducer(undefined, action);
+    const res    = reducer(undefined, action);
 
     t.e(res).toEqual(initialState);
   });
@@ -18,7 +18,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetManyAirlines', () => {
     t.it('should return the `isProcessing` on the state', () => {
       const action = airlineActions.airUniversalGetManyAirlines();
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeTruthy();
     });
@@ -27,9 +27,9 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetManyAirlinesSuccess', () => {
     t.it('should return the `ids & entities` on the state', () => {
       const action = airlineActions.airUniversalGetManyAirlinesSuccess(MOCK_AIRLINES);
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
-      const ids = MOCK_AIRLINES.map(cur => cur._id);
+      const ids      = MOCK_AIRLINES.map(cur => cur._id);
       const entities = MOCK_AIRLINES.reduce(entityReducer, undefined);
 
       t.e(res.ids).toEqual(ids);
@@ -41,7 +41,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetManyAirlinesFail', () => {
     t.it('should return the `error` on the state', () => {
       const action = airlineActions.airUniversalGetManyAirlinesFail(ERROR__NO_PAYLOAD.message);
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeFalsy();
       t.e(res.error).toEqual(ERROR__NO_PAYLOAD.message);
@@ -51,7 +51,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetOneAirline', () => {
     t.it('should return the `isProcessing` on the state', () => {
       const action = airlineActions.airUniversalGetOneAirline(MOCK_AIRLINE._id);
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeTruthy();
     });
@@ -60,7 +60,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetOneAirlineSuccess', () => {
     t.it('should return the `selectedId` on the state', () => {
       const action = airlineActions.airUniversalGetOneAirlineSuccess(MOCK_AIRLINE);
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.selectedId).toEqual(MOCK_AIRLINE._id);
       t.e(res.isProcessing).toBeFalsy();
@@ -70,7 +70,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalGetOneAirlineFail', () => {
     t.it('should return the `error` on the state', () => {
       const action = airlineActions.airUniversalGetOneAirlineFail(ERROR__NO_PAYLOAD.message);
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeFalsy();
       t.e(res.error).toEqual(ERROR__NO_PAYLOAD.message);
@@ -80,7 +80,7 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalAddOneAirline', () => {
     t.it('should return the `selectedId` on the state', () => {
       const action = airlineActions.airUniversalAddOneAirline();
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.selectedId).toEqual(EMPTY_UNIQUE_ID);
     });
@@ -90,10 +90,10 @@ t.describe('airline: airline.reducer', () => {
     t.it('should return the `isProcessing` on the state', () => {
       const action = airlineActions.airUniversalCreateOneAirline({
         resource: MOCK_AIRLINE,
-        router: undefined,
-        route: []
+        router  : undefined,
+        route   : []
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeTruthy();
     });
@@ -101,13 +101,13 @@ t.describe('airline: airline.reducer', () => {
 
   t.describe('airUniversalCreateOneAirlineSuccess', () => {
     t.it('should return the `ids & entities` on the state', () => {
-      const add = airlineActions.airUniversalAddOneAirline();
+      const add      = airlineActions.airUniversalAddOneAirline();
       const addState = reducer(initialState, add);
-      const action = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
-      const res = reducer(addState, action);
+      const action   = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
+      const res      = reducer(addState, action);
 
-      const ids = [MOCK_AIRLINE._id];
-      const entities = { [MOCK_AIRLINE._id]: MOCK_AIRLINE };
+      const ids      = [MOCK_AIRLINE._id];
+      const entities = {[MOCK_AIRLINE._id]: MOCK_AIRLINE};
 
       t.e(res.ids).toEqual(ids);
       t.e(res.entities).toEqual(entities);
@@ -118,10 +118,10 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalCreateOneAirlineFail', () => {
     t.it('should return the `error` on the state', () => {
       const action = airlineActions.airUniversalCreateOneAirlineFail({
-        id: EMPTY_UNIQUE_ID,
+        id   : EMPTY_UNIQUE_ID,
         error: ERROR__NO_PAYLOAD.message
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeFalsy();
       t.e(res.error).toEqual(ERROR__NO_PAYLOAD.message);
@@ -132,10 +132,10 @@ t.describe('airline: airline.reducer', () => {
     t.it('should return the `isProcessing` on the state', () => {
       const action = airlineActions.airUniversalUpdateOneAirline({
         resource: MOCK_AIRLINE,
-        router: undefined,
-        route: []
+        router  : undefined,
+        route   : []
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeTruthy();
     });
@@ -143,15 +143,15 @@ t.describe('airline: airline.reducer', () => {
 
   t.describe('airUniversalUpdateOneAirlineSuccess', () => {
     t.it('should return the `ids & entities` on the state', () => {
-      const add = airlineActions.airUniversalAddOneAirline();
-      const addState = reducer(initialState, add);
-      const create = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
+      const add         = airlineActions.airUniversalAddOneAirline();
+      const addState    = reducer(initialState, add);
+      const create      = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
       const createState = reducer(addState, create);
-      const action = airlineActions.airUniversalUpdateOneAirlineSuccess(MOCK_AIRLINE);
-      const res = reducer(createState, action);
+      const action      = airlineActions.airUniversalUpdateOneAirlineSuccess(MOCK_AIRLINE);
+      const res         = reducer(createState, action);
 
-      const ids = [MOCK_AIRLINE._id];
-      const entities = { [MOCK_AIRLINE._id]: MOCK_AIRLINE };
+      const ids      = [MOCK_AIRLINE._id];
+      const entities = {[MOCK_AIRLINE._id]: MOCK_AIRLINE};
 
       t.e(res.ids).toEqual(ids);
       t.e(res.entities).toEqual(entities);
@@ -162,10 +162,10 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalUpdateOneAirlineFail', () => {
     t.it('should return the `error` on the state', () => {
       const action = airlineActions.airUniversalUpdateOneAirlineFail({
-        id: EMPTY_UNIQUE_ID,
+        id   : EMPTY_UNIQUE_ID,
         error: ERROR__NO_PAYLOAD.message
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeFalsy();
       t.e(res.error).toEqual(ERROR__NO_PAYLOAD.message);
@@ -175,11 +175,11 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalDeleteOneAirline', () => {
     t.it('should return the `isProcessing` on the state', () => {
       const action = airlineActions.airUniversalDeleteOneAirline({
-        id: MOCK_AIRLINE._id,
+        id    : MOCK_AIRLINE._id,
         router: undefined,
-        route: []
+        route : []
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeTruthy();
     });
@@ -187,12 +187,12 @@ t.describe('airline: airline.reducer', () => {
 
   t.describe('airUniversalDeleteOneAirlineSuccess', () => {
     t.it('should return the `ids & entities` on the state', () => {
-      const add = airlineActions.airUniversalAddOneAirline();
-      const addState = reducer(initialState, add);
-      const create = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
+      const add         = airlineActions.airUniversalAddOneAirline();
+      const addState    = reducer(initialState, add);
+      const create      = airlineActions.airUniversalCreateOneAirlineSuccess(MOCK_AIRLINE);
       const createState = reducer(addState, create);
-      const action = airlineActions.airUniversalDeleteOneAirlineSuccess(MOCK_AIRLINE._id);
-      const res = reducer(createState, action);
+      const action      = airlineActions.airUniversalDeleteOneAirlineSuccess(MOCK_AIRLINE._id);
+      const res         = reducer(createState, action);
 
       t.e(res.ids).toEqual([]);
       t.e(res.entities).toEqual({});
@@ -203,10 +203,10 @@ t.describe('airline: airline.reducer', () => {
   t.describe('airUniversalDeleteOneAirlineFail', () => {
     t.it('should return the `error` on the state', () => {
       const action = airlineActions.airUniversalDeleteOneAirlineFail({
-        id: EMPTY_UNIQUE_ID,
+        id   : EMPTY_UNIQUE_ID,
         error: ERROR__NO_PAYLOAD.message
       });
-      const res = reducer(initialState, action);
+      const res    = reducer(initialState, action);
 
       t.e(res.isProcessing).toBeFalsy();
       t.e(res.error).toEqual(ERROR__NO_PAYLOAD.message);

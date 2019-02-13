@@ -6,8 +6,8 @@ import { MOCK_AIRLINE } from './testing';
 
 const MOCK_STORE = {
   [AIRLINE]: {
-    ids: [MOCK_AIRLINE._id],
-    entities: { [MOCK_AIRLINE._id]: MOCK_AIRLINE },
+    ids       : [MOCK_AIRLINE._id],
+    entities  : {[MOCK_AIRLINE._id]: MOCK_AIRLINE},
     selectedId: MOCK_AIRLINE._id
   }
 };

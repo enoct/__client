@@ -19,9 +19,9 @@ export class MockAirlineService {
   getOne$(id: UniqueId): Observable<Airline> {
     return !this.isFailing
       ? observableOf({
-          ...MOCK_AIRLINE,
-          _id: id
-        })
+        ...MOCK_AIRLINE,
+        _id: id
+      })
       : throwError(ERROR__NO_PAYLOAD);
   }
 

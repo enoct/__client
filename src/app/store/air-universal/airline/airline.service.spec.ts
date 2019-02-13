@@ -9,7 +9,7 @@ import { MOCK_AIRLINE, MOCK_AIRLINES } from './testing';
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule, CoreTestingModule],
+    imports  : [HttpClientTestingModule, CoreTestingModule],
     providers: [AirlineService]
   });
 };
@@ -38,7 +38,7 @@ t.describe('airline: AirlineService', () => {
         http
           .expectOne({
             method: 'GET',
-            url: '{baseUrl}/assets/data/airlines.json'
+            url   : '{baseUrl}/assets/data/airlines.json'
           })
           .flush(MOCK_AIRLINES);
         http.verify();
@@ -58,7 +58,7 @@ t.describe('airline: AirlineService', () => {
         http
           .expectOne({
             method: 'GET',
-            url: '{baseUrl}/assets/data/airlines.json'
+            url   : '{baseUrl}/assets/data/airlines.json'
           })
           .flush(MOCK_AIRLINES);
         http.verify();
