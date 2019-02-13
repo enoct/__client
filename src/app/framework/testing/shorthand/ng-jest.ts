@@ -22,7 +22,7 @@ export const ngJest: JestApi = {
   fakeAsync,
   be: beforeEach, // shorthand beforeEach
   beforeEach,
-  e: expect, // shorthand expect
+  e : expect, // shorthand expect
   expect,
   fail,
   inject,

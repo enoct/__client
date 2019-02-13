@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { BaseDocument, UniqueId } from '~/app/framework/ngrx';
 
 @Component({
-  template: '',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent implements OnDestroy {

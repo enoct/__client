@@ -20,7 +20,7 @@ export const getAbsolutePath = (serverRequest: Request) => (request: HttpRequest
     cur => `${cur}/${request.url.replace('./', '')}`
   )(serverRequest);
 
-  return request.clone({ url });
+  return request.clone({url});
 };
 
 @Injectable()

@@ -8,7 +8,7 @@ import { MockTranslateService } from './mocks/translate-service.mock';
 @NgModule({
   providers: [
     {
-      provide: TranslateService,
+      provide : TranslateService,
       useClass: MockTranslateService
     },
     I18NService

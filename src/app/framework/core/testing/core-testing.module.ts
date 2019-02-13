@@ -15,31 +15,31 @@ import { MockMetaService } from './mocks/meta-service.mock';
 import { MockWindow } from './mocks/window.mock';
 
 @NgModule({
-  imports: [NoopAnimationsModule],
+  imports  : [NoopAnimationsModule],
   providers: [
     {
-      provide: ElementRef,
+      provide   : ElementRef,
       useFactory: () => new MockElementRef()
     },
     {
-      provide: WindowService,
+      provide : WindowService,
       useClass: MockWindow
     },
     {
-      provide: ConsoleService,
+      provide : ConsoleService,
       useValue: console
     },
     LogService,
     {
-      provide: ConfigService,
+      provide : ConfigService,
       useClass: MockConfigService
     },
     {
-      provide: CacheService,
+      provide : CacheService,
       useClass: MockCacheService
     },
     {
-      provide: MetaService,
+      provide : MetaService,
       useClass: MockMetaService
     },
     ANALYTICS_PROVIDERS
@@ -48,29 +48,29 @@ import { MockWindow } from './mocks/window.mock';
 export class CoreTestingModule {
   static withOptions(options?: any): ModuleWithProviders {
     const platformProvider =
-      options && options.platformId
-        ? [
-            {
-              provide: PLATFORM_ID,
-              useValue: options.platformId
-            }
-          ]
-        : [];
+            options && options.platformId
+              ? [
+                {
+                  provide : PLATFORM_ID,
+                  useValue: options.platformId
+                }
+              ]
+              : [];
 
     return {
-      ngModule: CoreTestingModule,
+      ngModule : CoreTestingModule,
       providers: [
         platformProvider,
         {
-          provide: WindowService,
+          provide : WindowService,
           useClass: getOrNil(MockWindow)(get('window')(options))
         },
         {
-          provide: ConfigService,
+          provide : ConfigService,
           useClass: getOrNil(MockConfigService)(get('config')(options))
         },
         {
-          provide: MetaService,
+          provide : MetaService,
           useClass: getOrNil(MockMetaService)(get('meta')(options))
         }
       ]

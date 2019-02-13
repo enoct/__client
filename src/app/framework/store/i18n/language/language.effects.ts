@@ -14,7 +14,7 @@ export class LanguageEffects {
     filter(languageActions.is.i18nInitLanguage),
     map(get('payload')),
     map(payload => {
-      this.i18n.defaultLanguage = payload.defaultLanguage;
+      this.i18n.defaultLanguage    = payload.defaultLanguage;
       this.i18n.availableLanguages = payload.availableLanguages;
       this.i18n.useLocalizedRoutes = payload.useLocalizedRoutes;
 
@@ -44,7 +44,7 @@ export class LanguageEffects {
 
         const success = languageActions.i18nUseLanguageSuccess(language);
 
-        this.i18n.track(success.type, { label: language.code });
+        this.i18n.track(success.type, {label: language.code});
 
         return success;
       }

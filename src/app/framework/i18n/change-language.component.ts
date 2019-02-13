@@ -12,7 +12,11 @@ import { FrameworkState, languageActions } from '~/app/framework/store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ChangeLanguageComponent extends BaseComponent implements OnInit {
-  constructor(private readonly store$: Store<FrameworkState>, private readonly route: ActivatedRoute, private readonly router: Router) {
+  constructor(
+    private readonly store$: Store<FrameworkState>,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) {
     super();
   }
 

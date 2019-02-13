@@ -10,22 +10,22 @@ import { BaseUrlInterceptor, getBaseUrl } from './base-url.interceptor';
 import { MockService } from './testing';
 
 const MOCK_BASE_BROWSER_URL = 'http://localhost:4200';
-const MOCK_BASE_SERVER_URL = 'http://localhost:4000';
+const MOCK_BASE_SERVER_URL  = 'http://localhost:4000';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [HttpClientTestingModule, CoreTestingModule.withOptions()],
+    imports  : [HttpClientTestingModule, CoreTestingModule.withOptions()],
     providers: [
       {
-        provide: MockService,
+        provide   : MockService,
         useFactory: (config: ConfigService, http: HttpClient) => new MockService(config, http, 'backend.test.remote'),
-        deps: [ConfigService, HttpClient]
+        deps      : [ConfigService, HttpClient]
       },
       BaseUrlInterceptor,
       {
-        provide: HTTP_INTERCEPTORS,
+        provide : HTTP_INTERCEPTORS,
         useClass: BaseUrlInterceptor,
-        multi: true
+        multi   : true
       }
     ]
   });
@@ -35,7 +35,7 @@ t.describe('getBaseUrl for `browser` platform', () => {
   t.it(
     'should return `baseBrowserUrl`',
     t.inject([ConfigService], (config: ConfigService) => {
-      const actual = getBaseUrl(config)(false);
+      const actual   = getBaseUrl(config)(false);
       const expected = `${MOCK_BASE_BROWSER_URL}`;
 
       t.e(actual).toEqual(expected);
@@ -47,7 +47,7 @@ t.describe('getBaseUrl for `server` platform', () => {
   t.it(
     'should return `baseBrowserUrl`',
     t.inject([ConfigService], (config: ConfigService) => {
-      const actual = getBaseUrl(config)(true);
+      const actual   = getBaseUrl(config)(true);
       const expected = `${MOCK_BASE_SERVER_URL}`;
 
       t.e(actual).toEqual(expected);
@@ -71,7 +71,7 @@ t.describe('BaseUrlInterceptor', () => {
           t.e(res).toBeTruthy();
         });
 
-        const actual = http.expectOne({ method: 'GET' });
+        const actual   = http.expectOne({method: 'GET'});
         const expected = 'http://localhost:4200/test';
 
         t.e(actual.request.url).toEqual(expected);

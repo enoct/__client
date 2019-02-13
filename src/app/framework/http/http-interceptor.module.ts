@@ -7,16 +7,16 @@ import { UniversalInterceptor } from './universal.interceptor';
 @NgModule({
   providers: [
     {
-      provide: HTTP_INTERCEPTORS,
+      provide : HTTP_INTERCEPTORS,
       useClass: UniversalInterceptor,
-      deps: [Injector, PLATFORM_ID],
-      multi: true
+      deps    : [Injector, PLATFORM_ID],
+      multi   : true
     },
     {
-      provide: HTTP_INTERCEPTORS,
+      provide : HTTP_INTERCEPTORS,
       useClass: BaseUrlInterceptor,
-      deps: [Injector, PLATFORM_ID],
-      multi: true
+      deps    : [Injector, PLATFORM_ID],
+      multi   : true
     }
   ]
 })

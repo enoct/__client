@@ -9,14 +9,14 @@ import { AnalyticsService } from './analytics.service';
 export const ANALYTICS_PROVIDERS: Array<any> = [Angulartics2, AnalyticsService];
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, RouterModule, Angulartics2Module.forRoot()],
-  exports: [Angulartics2Module],
+  imports  : [CommonModule, HttpClientModule, RouterModule, Angulartics2Module.forRoot()],
+  exports  : [Angulartics2Module],
   providers: [ANALYTICS_PROVIDERS]
 })
 export class AnalyticsModule {
   static forRoot(configuredProviders: Array<any>): ModuleWithProviders {
     return {
-      ngModule: AnalyticsModule,
+      ngModule : AnalyticsModule,
       providers: configuredProviders
     };
   }

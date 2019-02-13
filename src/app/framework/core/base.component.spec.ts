@@ -12,7 +12,7 @@ configureTestSuite(() => {
 
 t.describe('BaseComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(BaseComponent);
+    const fixture  = TestBed.createComponent(BaseComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 

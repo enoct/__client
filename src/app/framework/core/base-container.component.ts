@@ -6,7 +6,7 @@ import { FrameworkState } from '~/app/framework/store';
 import { BaseComponent } from './base.component';
 
 @Component({
-  template: '',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseContainerComponent extends BaseComponent {

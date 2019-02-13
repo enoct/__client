@@ -9,15 +9,15 @@ import { t } from '~/app/framework/testing';
 
 import { I18NService } from './i18n.service';
 
-const MOCK_DEFAULT_LANGUAGE = {
-  code: 'en',
-  name: 'English',
+const MOCK_DEFAULT_LANGUAGE    = {
+  code   : 'en',
+  name   : 'English',
   culture: 'en-US'
 };
 const MOCK_AVAILABLE_LANGUAGES = [
   {
-    code: 'en',
-    name: 'English',
+    code   : 'en',
+    name   : 'English',
     culture: 'en-US'
   }
 ];
@@ -56,7 +56,7 @@ t.describe('I18NService', () => {
   t.it(
     'should get default language (by code)',
     t.inject([I18NService], (i18n: I18NService) => {
-      i18n.defaultLanguage = MOCK_DEFAULT_LANGUAGE;
+      i18n.defaultLanguage    = MOCK_DEFAULT_LANGUAGE;
       i18n.availableLanguages = MOCK_AVAILABLE_LANGUAGES;
 
       const language = i18n.getLanguageByCode('fr');
@@ -83,7 +83,7 @@ t.describe('I18NService w/o init', () => {
 
 t.describe('I18NService for `server` platform', () => {
   t.be(() => {
-    testModuleConfig({ platformId: 'server' });
+    testModuleConfig({platformId: 'server'});
   });
 
   t.it(
@@ -100,7 +100,7 @@ t.describe('I18NService for `server` platform', () => {
 
 t.describe('I18NService for `fr` browser', () => {
   t.be(() => {
-    testModuleConfig({ window: MockWindowFrench });
+    testModuleConfig({window: MockWindowFrench});
   });
 
   t.it(
@@ -116,7 +116,7 @@ t.describe('I18NService for `fr` browser', () => {
 
 t.describe('I18NService for browser w/o language', () => {
   t.be(() => {
-    testModuleConfig({ window: MockWindowNoLanguage });
+    testModuleConfig({window: MockWindowNoLanguage});
   });
 
   t.it(

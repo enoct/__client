@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
 const getHeaders = (request: HttpRequest<any>) => (token: string) =>
   token
     ? request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`
-        }
-      })
+      setHeaders: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     : request;
 
 @Injectable()

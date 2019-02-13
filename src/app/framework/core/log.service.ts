@@ -6,7 +6,10 @@ import { LogLevel } from './models/log-level';
 
 @Injectable()
 export class LogService {
-  constructor(private readonly config: ConfigService, @Inject(forwardRef(() => ConsoleService)) readonly logger: ConsoleService) {}
+  constructor(
+    private readonly config: ConfigService,
+    @Inject(forwardRef(() => ConsoleService)) readonly logger: ConsoleService
+  ) {}
 
   // debug (standard output)
   debug(msg: any): void {

@@ -11,7 +11,7 @@ export class MockActivatedRoute {
 
   constructor() {
     this.subject = new BehaviorSubject(this.testParams);
-    this.params = this.subject.asObservable();
+    this.params  = this.subject.asObservable();
   }
 
   get testParams(): any {

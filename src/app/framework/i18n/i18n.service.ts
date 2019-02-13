@@ -27,9 +27,9 @@ export class I18NService extends Analytics {
   getLanguageByCode(languageCode: string): Language {
     return !isEmpty(this.availableLanguages)
       ? flow(
-          (cur: Array<Language>) => cur.find(language => language.code === languageCode),
-          getOrNil(this.defaultLanguage)
-        )(this.availableLanguages)
+        (cur: Array<Language>) => cur.find(language => language.code === languageCode),
+        getOrNil(this.defaultLanguage)
+      )(this.availableLanguages)
       : this.defaultLanguage;
   }
 

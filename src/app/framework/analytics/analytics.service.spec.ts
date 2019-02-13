@@ -9,7 +9,7 @@ import { Analytics, AnalyticsService } from './analytics.service';
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, AnalyticsModule],
+    imports  : [RouterTestingModule, AnalyticsModule],
     providers: [Angulartics2, AnalyticsService]
   });
 };
@@ -27,15 +27,15 @@ t.describe('AnalyticsService', () => {
       analyticsService.devMode(false);
       analyticsService.track('click', {
         category: 'TEST',
-        label: 'Testing'
+        label   : 'Testing'
       });
 
       const expected = cold('c', {
         c: {
-          action: 'click',
+          action    : 'click',
           properties: {
             category: 'TEST',
-            label: 'Testing'
+            label   : 'Testing'
           }
         }
       });
@@ -51,7 +51,7 @@ t.describe('AnalyticsService', () => {
       analyticsService.devMode(true);
       analyticsService.track('click', {
         category: 'TEST',
-        label: 'Testing'
+        label   : 'Testing'
       });
 
       t.e((angulartics.eventTrack as any)._events).not.toHaveProperty('value');
@@ -91,15 +91,15 @@ t.describe('AnalyticsService', () => {
       analyticsService.devMode(false);
       analyticsService.identify({
         userId: 1,
-        name: 'Test',
-        email: 'name@domain.com'
+        name  : 'Test',
+        email : 'name@domain.com'
       });
 
       const expected = cold('c', {
         c: {
           userId: 1,
-          name: 'Test',
-          email: 'name@domain.com'
+          name  : 'Test',
+          email : 'name@domain.com'
         }
       });
 
@@ -114,8 +114,8 @@ t.describe('AnalyticsService', () => {
       analyticsService.devMode(true);
       analyticsService.identify({
         userId: 1,
-        name: 'Test',
-        email: 'name@domain.com'
+        name  : 'Test',
+        email : 'name@domain.com'
       });
 
       t.e((angulartics.setUserProperties as any)._events).not.toHaveProperty('value');
@@ -133,16 +133,16 @@ t.describe('AnalyticsService (base class)', () => {
     t.inject([AnalyticsService], (analyticsService: AnalyticsService) => {
       const spy = t.spyOn(analyticsService, 'track');
 
-      const analytics = new TestAnalytics(analyticsService);
+      const analytics    = new TestAnalytics(analyticsService);
       analytics.category = 'TEST';
       analytics.track('action', {
         category: analytics.category,
-        label: 'Testing'
+        label   : 'Testing'
       });
 
       t.e(spy).toHaveBeenCalledWith('action', {
         category: analytics.category,
-        label: 'Testing'
+        label   : 'Testing'
       });
     })
   );

@@ -9,15 +9,15 @@ import { I18NService } from './i18n.service';
 export const translateFactory = (http: HttpClient) => new TranslateHttpLoader(http, './assets/i18n/');
 
 @NgModule({
-  imports: [TranslateModule.forRoot()],
+  imports     : [TranslateModule.forRoot()],
   declarations: [ChangeLanguageComponent],
-  providers: [I18NService],
-  exports: [TranslateModule]
+  providers   : [I18NService],
+  exports     : [TranslateModule]
 })
 export class I18NModule {
   static forRoot(configuredProviders?: Array<any>): ModuleWithProviders {
     return {
-      ngModule: I18NModule,
+      ngModule : I18NModule,
       providers: configuredProviders
     };
   }

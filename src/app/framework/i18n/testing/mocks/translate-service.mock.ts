@@ -2,7 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { Observable, of as observableOf } from 'rxjs';
 
 export class MockTranslateService {
-  onLangChange: EventEmitter<any> = new EventEmitter();
+  onLangChange: EventEmitter<any>        = new EventEmitter();
   onTranslationChange: EventEmitter<any> = new EventEmitter();
   onDefaultLangChange: EventEmitter<any> = new EventEmitter();
 

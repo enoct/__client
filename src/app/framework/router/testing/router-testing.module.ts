@@ -8,11 +8,11 @@ import { MockRouter } from './mocks/router.mock';
 @NgModule({
   providers: [
     {
-      provide: Router,
+      provide : Router,
       useClass: MockRouter
     },
     {
-      provide: ActivatedRoute,
+      provide : ActivatedRoute,
       useClass: MockActivatedRoute
     }
   ]

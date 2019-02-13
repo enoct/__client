@@ -7,14 +7,14 @@ import { BaseContainerComponent } from './base-container.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [NgrxTestingModule],
+    imports     : [NgrxTestingModule],
     declarations: [BaseContainerComponent]
   });
 });
 
 t.describe('BaseContainerComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(BaseContainerComponent);
+    const fixture  = TestBed.createComponent(BaseContainerComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
