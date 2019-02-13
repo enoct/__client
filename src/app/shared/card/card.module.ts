@@ -8,12 +8,12 @@ import { CommonModule } from '~/app/shared';
 import { CardComponent } from './card.component';
 
 @NgModule({
-  imports: [FlexLayoutModule, TranslateModule, MaterialModule, CommonModule],
-  exports: [CardComponent],
+  imports     : [FlexLayoutModule, TranslateModule, MaterialModule, CommonModule],
+  exports     : [CardComponent],
   declarations: [CardComponent],
-  providers: [
+  providers   : [
     {
-      provide: LAYOUT_CONFIG,
+      provide : LAYOUT_CONFIG,
       useValue: APP_LAYOUT_CONFIG
     }
   ]

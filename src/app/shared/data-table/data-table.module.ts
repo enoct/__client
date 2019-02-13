@@ -11,12 +11,12 @@ import { DataTableBaseComponent } from './data-table-base.component';
 import { DataTableComponent } from './data-table.component';
 
 @NgModule({
-  imports: [RouterModule, FlexLayoutModule, TranslateModule, PerfectScrollbarModule, MaterialModule, CommonModule],
-  exports: [DataTableComponent],
+  imports     : [RouterModule, FlexLayoutModule, TranslateModule, PerfectScrollbarModule, MaterialModule, CommonModule],
+  exports     : [DataTableComponent],
   declarations: [DataTableComponent, DataTableBaseComponent],
-  providers: [
+  providers   : [
     {
-      provide: LAYOUT_CONFIG,
+      provide : LAYOUT_CONFIG,
       useValue: APP_LAYOUT_CONFIG
     }
   ]

@@ -9,7 +9,7 @@ export interface DataTableRouteButton {
 }
 
 export const createRouteButton = (cssClass: string, icon: string, text: string, route: Array<any>, target: any) => ({
-  type: 'link-button',
+  type           : 'link-button',
   cssClass,
   icon,
   text,
@@ -18,8 +18,14 @@ export const createRouteButton = (cssClass: string, icon: string, text: string, 
   passRouteParams: false
 });
 
-export const createRouteButtonWithParams = (cssClass: string, icon: string, text: string, route: Array<any>, target: any) => ({
-  type: 'link-button',
+export const createRouteButtonWithParams = (
+  cssClass: string,
+  icon: string,
+  text: string,
+  route: Array<any>,
+  target: any
+) => ({
+  type           : 'link-button',
   cssClass,
   icon,
   text,

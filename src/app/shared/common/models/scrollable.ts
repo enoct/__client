@@ -1,8 +1,8 @@
 export enum Scrollable {
-  None = '',
-  Small = 'sm',
+  None   = '',
+  Small  = 'sm',
   Medium = 'md',
-  Large = 'lg',
+  Large  = 'lg',
   XLarge = 'xl',
-  Full = 'full'
+  Full   = 'full'
 }

@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { BaseComponent } from '~/app/framework/core';
 
 @Component({
-  selector: 'app-menu-item',
-  template: '',
+  selector       : 'app-menu-item',
+  template       : '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuItemComponent extends BaseComponent {

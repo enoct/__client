@@ -10,8 +10,8 @@ import { MenuItemComponent } from './components/menu/menu-item.component';
 const COMPONENTS = [LoadingOverlayComponent, MenuGroupComponent, MenuItemComponent];
 
 @NgModule({
-  imports: [CommonAngularModule, FormsModule, MaterialModule],
+  imports     : [CommonAngularModule, FormsModule, MaterialModule],
   declarations: [COMPONENTS],
-  exports: [CommonAngularModule, COMPONENTS]
+  exports     : [CommonAngularModule, COMPONENTS]
 })
 export class CommonModule {}

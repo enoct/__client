@@ -8,16 +8,16 @@ export interface DataTableColumn {
 
 export const createColumn = (property: string, label?: string, callback?: Function) => ({
   property,
-  label: label || property,
+  label    : label || property,
   translate: false,
-  suffix: '',
+  suffix   : '',
   callback
 });
 
 export const createLocalizedColumn = (property: string, label?: string, callback?: Function) => ({
   property,
-  label: label || property,
+  label    : label || property,
   translate: true,
-  suffix: '',
+  suffix   : '',
   callback
 });
