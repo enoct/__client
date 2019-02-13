@@ -3,10 +3,10 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { configureTestSuite } from 'ng-bullet';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { I18NTestingModule } from '~/app/framework/i18n/testing';
-import { NgrxTestingModule } from '~/app/framework/ngrx/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
+import { NgrxTestingModule } from '~/@enoct/framework/ngrx/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { MainComponent } from './main.component';
 

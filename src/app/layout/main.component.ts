@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BaseComponent } from '~/app/framework/core';
+import { BaseComponent } from '~/@enoct/framework/core';
 
 @Component({
   selector       : 'app-main',

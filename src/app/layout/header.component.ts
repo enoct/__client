@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { AuthService } from '@ngx-auth/core';
 import { ConfigService } from '@ngx-config/core';
 import { Observable } from 'rxjs';
-import { BaseComponent } from '~/app/framework/core';
+import { BaseComponent } from '~/@enoct/framework/core';
 import { Language, LanguageSelectors, State } from '~/app/store';
 
 @Component({
