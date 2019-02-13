@@ -3,9 +3,9 @@ import { BaseComponent } from '~/app/framework/core';
 import { routeAnimation } from '~/app/shared';
 
 @Component({
-  templateUrl: './about-banana.component.html',
-  styleUrls: ['about-banana.component.scss'],
+  templateUrl    : './about-banana.component.html',
+  styleUrls      : ['about-banana.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [routeAnimation]
+  animations     : [routeAnimation]
 })
 export class AboutBananaComponent extends BaseComponent {}

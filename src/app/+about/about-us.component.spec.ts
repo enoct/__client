@@ -11,14 +11,14 @@ import { AboutUsComponent } from './about-us.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, CoreTestingModule, I18NTestingModule, SharedModule, MaterialModule],
+    imports     : [RouterTestingModule, CoreTestingModule, I18NTestingModule, SharedModule, MaterialModule],
     declarations: [AboutUsComponent]
   });
 });
 
 t.describe('AboutUsComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AboutUsComponent);
+    const fixture  = TestBed.createComponent(AboutUsComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 

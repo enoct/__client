@@ -11,14 +11,14 @@ import { AboutBananaComponent } from './about-banana.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, CoreTestingModule, I18NTestingModule, SharedModule, MaterialModule],
+    imports     : [RouterTestingModule, CoreTestingModule, I18NTestingModule, SharedModule, MaterialModule],
     declarations: [AboutBananaComponent]
   });
 });
 
 t.describe('AboutBananaComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AboutBananaComponent);
+    const fixture  = TestBed.createComponent(AboutBananaComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
