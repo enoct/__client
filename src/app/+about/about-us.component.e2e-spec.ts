@@ -1,5 +1,5 @@
 import { baseUrl, browser } from 'e2e-config';
-import { e2e } from '~/app/framework/testing/e2e';
+import { e2e } from '~/@enoct/framework/testing/e2e';
 
 e2e.describe('AboutUsComponent', () => {
   e2e.it('should have title', async () => {

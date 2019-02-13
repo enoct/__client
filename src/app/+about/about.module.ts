@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '~/app/framework/core';
-import { MaterialModule } from '~/app/framework/material';
+import { SharedModule } from '~/@enoct/framework/core';
+import { MaterialModule } from '~/@enoct/framework/material';
 
 import { AboutApplePearComponent } from './about-apple-pear.component';
 import { AboutBananaComponent } from './about-banana.component';
