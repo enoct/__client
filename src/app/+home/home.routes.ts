@@ -2,12 +2,12 @@ import { HomeComponent } from './home.component';
 
 export const routes = [
   {
-    path: '',
+    path     : '',
     component: HomeComponent,
-    data: {
+    data     : {
       meta: {
-        title: 'PUBLIC.HOME.PAGE_TITLE',
-        override: true,
+        title      : 'PUBLIC.HOME.PAGE_TITLE',
+        override   : true,
         description: 'PUBLIC.HOME.META_DESCRIPTION'
       }
     }

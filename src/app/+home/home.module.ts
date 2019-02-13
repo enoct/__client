@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 import { routes } from './home.routes';
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(routes), SharedModule, MaterialModule],
+  imports     : [CommonModule, RouterModule.forChild(routes), SharedModule, MaterialModule],
   declarations: [HomeComponent]
 })
 export class HomeModule {}
