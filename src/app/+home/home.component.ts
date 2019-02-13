@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BaseComponent } from '~/app/framework/core';
-import { routeAnimation } from '~/app/shared';
+import { BaseComponent } from '~/@enoct/framework/core';
+import { routeAnimation } from '~/@enoct/shared';
 
 @Component({
   templateUrl    : './home.component.html',
