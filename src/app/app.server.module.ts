@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { AppModule, REQ_KEY } from './app.module';
 
 @NgModule({
-  imports: [
+  imports  : [
     AppModule,
     ServerModule,
     ModuleMapLoaderModule,
@@ -23,15 +23,15 @@ import { AppModule, REQ_KEY } from './app.module';
     FlexLayoutServerModule,
     ServerCacheModule.forRoot([
       {
-        provide: CACHE,
+        provide : CACHE,
         useClass: FsCacheService
       },
       {
-        provide: STORAGE,
+        provide : STORAGE,
         useClass: FsStorageService
       },
       {
-        provide: FsStorageLoader,
+        provide   : FsStorageLoader,
         useFactory: fsStorageFactory
       }
     ]),
@@ -39,8 +39,13 @@ import { AppModule, REQ_KEY } from './app.module';
   ],
   providers: [
     {
-      provide: APP_BOOTSTRAP_LISTENER,
-      useFactory: (appRef: ApplicationRef, transferState: TransferState, request: express.Request, cache: CacheService) => () =>
+      provide   : APP_BOOTSTRAP_LISTENER,
+      useFactory: (
+        appRef: ApplicationRef,
+        transferState: TransferState,
+        request: express.Request,
+        cache: CacheService
+      ) => () =>
         appRef.isStable
           .pipe(
             filter(stable => stable),
@@ -48,15 +53,15 @@ import { AppModule, REQ_KEY } from './app.module';
           )
           .subscribe(() => {
             transferState.set<any>(REQ_KEY, {
-              hostname: request.hostname,
+              hostname   : request.hostname,
               originalUrl: request.originalUrl,
-              referer: request.get('referer')
+              referer    : request.get('referer')
             });
 
             transferState.set<any>(makeStateKey(cache.key), JSON.stringify(cache.dehydrate()));
           }),
-      multi: true,
-      deps: [ApplicationRef, TransferState, REQUEST, CacheService]
+      multi     : true,
+      deps      : [ApplicationRef, TransferState, REQUEST, CacheService]
     }
   ],
   bootstrap: [AppComponent]
