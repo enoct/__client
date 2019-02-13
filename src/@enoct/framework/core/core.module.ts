@@ -44,7 +44,13 @@ export const metaFactory = (config: ConfigService, translate: TranslateService) 
   });
 
 @NgModule({
-  imports     : [StoreModule.forRoot({}), EffectsModule.forRoot([]), ConfigModule.forRoot(), CacheModule.forRoot(), MetaModule.forRoot()],
+  imports     : [
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    ConfigModule.forRoot(),
+    CacheModule.forRoot(),
+    MetaModule.forRoot()
+  ],
   declarations: [BaseComponent, BaseContainerComponent],
   providers   : [
     CORE_PROVIDERS

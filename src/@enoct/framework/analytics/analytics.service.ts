@@ -25,7 +25,7 @@ export class AnalyticsService {
 
   pageTrack(path: string): void {
     if (!this.devMode()) {
-      this.angulartics.pageTrack.next({ path });
+      this.angulartics.pageTrack.next({path});
     }
   }
 
@@ -50,6 +50,6 @@ export class Analytics {
   constructor(@Inject(AnalyticsService) public analytics: AnalyticsService) {}
 
   track(action: string, properties: AnalyticsProperties): void {
-    this.analytics.track(action, extend({ category: this.category })(properties));
+    this.analytics.track(action, extend({category: this.category})(properties));
   }
 }
