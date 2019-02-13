@@ -16,14 +16,14 @@ import { LoginComponent } from './login.component';
 
 const MOCK_ROUTES = [
   {
-    path: '',
+    path    : '',
     children: [
       {
-        path: '',
+        path     : '',
         component: MockComponent
       },
       {
-        path: 'login',
+        path     : 'login',
         component: MockComponent
       }
     ]
@@ -32,7 +32,7 @@ const MOCK_ROUTES = [
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [
+    imports     : [
       FormsModule,
       RouterTestingModule.withRoutes(MOCK_ROUTES),
       CoreTestingModule,
@@ -48,7 +48,7 @@ configureTestSuite(() => {
 
 t.describe('login: LoginComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(LoginComponent);
+    const fixture  = TestBed.createComponent(LoginComponent);
     const instance = fixture.debugElement.componentInstance;
     fixture.detectChanges();
 
@@ -72,7 +72,7 @@ t.describe('login: LoginComponent', () => {
   t.it(
     'should authenticate w/valid combination',
     t.async(() => {
-      const fixture = TestBed.createComponent(LoginComponent);
+      const fixture  = TestBed.createComponent(LoginComponent);
       const instance = fixture.debugElement.componentInstance;
       fixture.detectChanges();
 
@@ -90,7 +90,7 @@ t.describe('login: LoginComponent', () => {
     'should not authenticate w/o valid combination',
     t.inject([AuthService], async (auth: AuthService) =>
       auth.invalidate().then(() => {
-        const fixture = TestBed.createComponent(LoginComponent);
+        const fixture  = TestBed.createComponent(LoginComponent);
         const instance = fixture.debugElement.componentInstance;
         fixture.detectChanges();
 

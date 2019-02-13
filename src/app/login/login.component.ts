@@ -20,7 +20,11 @@ export class LoginComponent extends BaseComponent implements OnInit {
   note$: Observable<string>;
   error$: Observable<string>;
 
-  constructor(private readonly auth: AuthService, private readonly translate: TranslateService, private readonly router: Router) {
+  constructor(
+    private readonly auth: AuthService,
+    private readonly translate: TranslateService,
+    private readonly router: Router
+  ) {
     super();
   }
 
@@ -36,7 +40,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   login(): Observable<boolean> {
     this.isProcessing = true;
-    this.note$ = this.translate.get('PUBLIC.LOGIN.NOTE');
+    this.note$        = this.translate.get('PUBLIC.LOGIN.NOTE');
 
     const auth$ = this.auth.authenticate(this.username, this.password).pipe(takeUntil(this.ngUnsubscribe));
 

@@ -11,8 +11,8 @@
 :host {
   @include size(100%);
 
-  display: block;
-  background: c(grey);
+  display    : block;
+  background : c(grey);
 }
 
 .login {
@@ -20,15 +20,15 @@
   @include size(rem(38));
   @include push(0 auto);
 
-  background: c(white);
-  transform: translateX(-50%) translateY(-50%);
+  background : c(white);
+  transform  : translateX(-50%) translateY(-50%);
 
   @include el('header') {
     @include soft($space--xl);
     @include font(#{$h2}/#{$space--xxl} $font--preferred, c(white));
 
-    width: rem(38);
-    background: mat-color($primary--dark);
+    width      : rem(38);
+    background : mat-color($primary--dark);
   }
 
   @include el('body') {
@@ -40,20 +40,20 @@
   @include el('control') {
     @include push(rem(0.6) 0);
 
-    width: 100%;
+    width : 100%;
   }
 
   @include el('message') {
     @include push($space--xl 0 0);
 
-    color: c(grey);
-    text-align: center;
+    color      : c(grey);
+    text-align : center;
 
     @include mod('error') {
       @include push($space--xl 0 0);
 
-      color: mat-color($warn);
-      text-align: center;
+      color      : mat-color($warn);
+      text-align : center;
     }
   }
 }
