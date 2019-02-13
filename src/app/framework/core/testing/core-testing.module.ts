@@ -4,9 +4,9 @@ import { CacheService } from '@ngx-cache/core';
 import { ConfigService } from '@ngx-config/core';
 import { MetaService } from '@ngx-meta/core';
 import { get } from 'lodash/fp';
-import { ANALYTICS_PROVIDERS } from '~/app/framework/analytics';
-import { ConsoleService, LogService, WindowService } from '~/app/framework/core';
-import { getOrNil } from '~/app/shared';
+import { ANALYTICS_PROVIDERS } from '~/@enoct/framework/analytics';
+import { ConsoleService, LogService, WindowService } from '~/@enoct/framework/core';
+import { getOrNil } from '~/@enoct/shared';
 
 import { MockCacheService } from './mocks/cache-service.mock';
 import { MockConfigService } from './mocks/config-service.mock';

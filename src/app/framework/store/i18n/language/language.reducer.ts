@@ -1,4 +1,4 @@
-import { errorFn, startProcessingFn, stopProcessingFn } from '~/app/framework/ngrx';
+import { errorFn, startProcessingFn, stopProcessingFn } from '~/@enoct/framework/ngrx';
 
 import { LanguageAction, languageActions } from './language.actions';
 import { Language } from './language.model';

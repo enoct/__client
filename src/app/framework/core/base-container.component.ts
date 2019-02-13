@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { FrameworkState } from '~/app/framework/store';
+import { FrameworkState } from '~/@enoct/framework/store';
 
 import { BaseComponent } from './base.component';
 

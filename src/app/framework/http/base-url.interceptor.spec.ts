@@ -3,8 +3,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 import { ConfigService } from '@ngx-config/core';
 import { configureTestSuite } from 'ng-bullet';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { BaseUrlInterceptor, getBaseUrl } from './base-url.interceptor';
 import { MockService } from './testing';

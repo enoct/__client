@@ -1,4 +1,4 @@
-import { t } from '~/app/framework/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { entityErrorFn, entityResetFn, entityStartProcessingFn, entityStopProcessingFn } from './entity-reducer.util';
 

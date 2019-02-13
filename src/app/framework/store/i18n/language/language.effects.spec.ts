@@ -3,12 +3,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Actions } from '@ngrx/effects';
 import { ConfigService } from '@ngx-config/core';
 import { cold, hot } from 'jasmine-marbles';
-import { AnalyticsModule } from '~/app/framework/analytics';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { I18NTestingModule } from '~/app/framework/i18n/testing';
-import { NgrxTestingModule } from '~/app/framework/ngrx/testing';
-import { languageActions } from '~/app/framework/store';
-import { t } from '~/app/framework/testing';
+import { AnalyticsModule } from '~/@enoct/framework/analytics';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
+import { NgrxTestingModule } from '~/@enoct/framework/ngrx/testing';
+import { languageActions } from '~/@enoct/framework/store';
+import { t } from '~/@enoct/framework/testing';
 
 import { I18NService } from '../../../i18n/i18n.service';
 

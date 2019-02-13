@@ -1,11 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AnalyticsModule } from '~/app/framework/analytics';
-import { WindowService } from '~/app/framework/core';
-import { CoreTestingModule, MockWindowFrench, MockWindowNoLanguage } from '~/app/framework/core/testing';
-import { I18NTestingModule } from '~/app/framework/i18n/testing';
-import { t } from '~/app/framework/testing';
+import { AnalyticsModule } from '~/@enoct/framework/analytics';
+import { WindowService } from '~/@enoct/framework/core';
+import { CoreTestingModule, MockWindowFrench, MockWindowNoLanguage } from '~/@enoct/framework/core/testing';
+import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { I18NService } from './i18n.service';
 

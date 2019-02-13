@@ -3,7 +3,7 @@ import { InjectionToken } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { ConfigLoader, ConfigModule, ConfigService, ConfigStaticLoader } from '@ngx-config/core';
-import { t } from '~/app/framework/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { ConsoleService } from './console.service';
 import { LogService } from './log.service';

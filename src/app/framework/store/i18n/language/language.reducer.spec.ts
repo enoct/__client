@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ConfigService } from '@ngx-config/core';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { languageActions } from './language.actions';
 import { reducer } from './language.reducer';

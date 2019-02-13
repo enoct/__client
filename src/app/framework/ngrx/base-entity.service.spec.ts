@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConfigService } from '@ngx-config/core';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { t } from '~/app/framework/testing';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { MockEntityService } from './testing';
 

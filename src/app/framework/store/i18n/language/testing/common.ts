@@ -1,3 +1,3 @@
-import { initialLanguage } from '~/app/framework/store';
+import { initialLanguage } from '~/@enoct/framework/store';
 
 export const MOCK_LANGUAGE = initialLanguage;
