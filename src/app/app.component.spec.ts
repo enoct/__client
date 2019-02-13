@@ -12,14 +12,14 @@ import { AppComponent } from './app.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
-    imports: [RouterTestingModule, CoreTestingModule, NgrxTestingModule],
+    imports     : [RouterTestingModule, CoreTestingModule, NgrxTestingModule],
     declarations: [AppComponent]
   });
 });
 
 t.describe('AppComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture  = TestBed.createComponent(AppComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -30,12 +30,12 @@ t.describe('AppComponent', () => {
     'should dispatch `i18nInitLanguage` action',
     t.inject([ConfigService], (config: ConfigService) => {
       const fixture = TestBed.createComponent(AppComponent);
-      const store$ = fixture.debugElement.injector.get(Store);
-      const spy = t.spyOn(store$, 'dispatch');
+      const store$  = fixture.debugElement.injector.get(Store);
+      const spy     = t.spyOn(store$, 'dispatch');
       fixture.detectChanges();
 
       const settings = config.getSettings('i18n');
-      const action = languageActions.i18nInitLanguage(settings);
+      const action   = languageActions.i18nInitLanguage(settings);
 
       t.e(spy).toHaveBeenCalledWith(action);
       t.e(spy).toHaveBeenCalledTimes(1);
