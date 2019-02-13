@@ -3,8 +3,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import { flow, get, isEmpty, isNil, negate } from 'lodash/fp';
 import { of as observableOf } from 'rxjs';
 import { catchError, filter, map, switchMap, tap } from 'rxjs/operators';
-import { EMPTY_UNIQUE_ID } from '~/app/framework/ngrx';
-import { ERROR__NO_PAYLOAD } from '~/app/shared';
+import { EMPTY_UNIQUE_ID } from '~/@enoct/framework/ngrx';
+import { ERROR__NO_PAYLOAD } from '~/@enoct/shared';
 
 import { airlineActions } from './airline.actions';
 import { AirlineService } from './airline.service';

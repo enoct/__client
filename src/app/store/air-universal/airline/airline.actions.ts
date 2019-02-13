@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ofType, unionize, UnionOf } from 'unionize';
-import { UniqueId } from '~/app/framework/ngrx';
+import { UniqueId } from '~/@enoct/framework/ngrx';
 
 import { Airline } from './airline.model';
 

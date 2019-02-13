@@ -3,7 +3,7 @@ import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule as NgrxStoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreFrameworkModule } from '~/app/framework/store';
+import { StoreFrameworkModule } from '~/@enoct/framework/store';
 import { environment } from '~/environments/environment';
 
 import { AirUniversalStoreModule } from './air-universal';

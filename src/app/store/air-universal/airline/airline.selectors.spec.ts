@@ -1,4 +1,4 @@
-import { t } from '~/app/framework/testing';
+import { t } from '~/@enoct/framework/testing';
 
 import { getError, getIsProcessing, getSelected, getSelectedId } from './airline.selectors';
 import { AIRLINE } from './airline.state';

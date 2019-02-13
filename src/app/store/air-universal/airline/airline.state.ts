@@ -1,5 +1,5 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
-import { UniqueId } from '~/app/framework/ngrx';
+import { UniqueId } from '~/@enoct/framework/ngrx';
 
 import { Airline } from './airline.model';
 

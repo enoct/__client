@@ -1,6 +1,6 @@
-import { EMPTY_UNIQUE_ID, entityReducer } from '~/app/framework/ngrx';
-import { t } from '~/app/framework/testing';
-import { ERROR__NO_PAYLOAD } from '~/app/shared';
+import { EMPTY_UNIQUE_ID, entityReducer } from '~/@enoct/framework/ngrx';
+import { t } from '~/@enoct/framework/testing';
+import { ERROR__NO_PAYLOAD } from '~/@enoct/shared';
 
 import { airlineActions } from './airline.actions';
 import { reducer } from './airline.reducer';

@@ -1,4 +1,4 @@
-import { FrameworkState } from '~/app/framework/store';
+import { FrameworkState } from '~/@enoct/framework/store';
 
 import { AirUniversalState } from './air-universal';
 

@@ -5,7 +5,7 @@ import {
   entityStartProcessingFn,
   entityStopProcessingFn,
   UniqueId
-} from '~/app/framework/ngrx';
+} from '~/@enoct/framework/ngrx';
 
 import { AirlineAction, airlineActions } from './airline.actions';
 import { Airline, initialAirline } from './airline.model';

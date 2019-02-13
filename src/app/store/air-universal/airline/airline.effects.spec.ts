@@ -3,12 +3,12 @@ import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Actions } from '@ngrx/effects';
 import { cold, hot } from 'jasmine-marbles';
-import { CoreTestingModule } from '~/app/framework/core/testing';
-import { EMPTY_UNIQUE_ID } from '~/app/framework/ngrx';
-import { NgrxTestingModule } from '~/app/framework/ngrx/testing';
-import { RouterTestingModule } from '~/app/framework/router/testing';
-import { t } from '~/app/framework/testing';
-import { ERROR__NO_PAYLOAD } from '~/app/shared';
+import { CoreTestingModule } from '~/@enoct/framework/core/testing';
+import { EMPTY_UNIQUE_ID } from '~/@enoct/framework/ngrx';
+import { NgrxTestingModule } from '~/@enoct/framework/ngrx/testing';
+import { RouterTestingModule } from '~/@enoct/framework/router/testing';
+import { t } from '~/@enoct/framework/testing';
+import { ERROR__NO_PAYLOAD } from '~/@enoct/shared';
 
 import { airlineActions } from './airline.actions';
 import { AirlineEffects } from './airline.effects';
