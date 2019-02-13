@@ -3,9 +3,9 @@ import { BaseComponent } from '~/app/framework/core';
 import { routeAnimation } from '~/app/shared';
 
 @Component({
-  templateUrl: './secure.component.html',
-  styleUrls: ['secure.component.scss'],
+  templateUrl    : './secure.component.html',
+  styleUrls      : ['secure.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [routeAnimation]
+  animations     : [routeAnimation]
 })
 export class SecureComponent extends BaseComponent {}

@@ -4,12 +4,12 @@ import { SecureComponent } from './secure.component';
 
 export const routes = [
   {
-    path: '',
-    component: SecureComponent,
+    path       : '',
+    component  : SecureComponent,
     canActivate: [AuthGuard],
-    data: {
+    data       : {
       meta: {
-        title: 'PUBLIC.SECURE.PAGE_TITLE',
+        title      : 'PUBLIC.SECURE.PAGE_TITLE',
         description: 'PUBLIC.SECURE.META_DESCRIPTION'
       }
     }
