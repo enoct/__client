@@ -13,12 +13,12 @@ import { AppComponent } from './app.component';
 import { AppModule, REQ_KEY } from './app.module';
 
 @NgModule({
-  imports: [
+  imports  : [
     BrowserTransferStateModule,
     BrowserAnimationsModule,
     BrowserCacheModule.forRoot([
       {
-        provide: CACHE,
+        provide : CACHE,
         useClass: MemoryCacheService
       }
     ]),
@@ -26,11 +26,11 @@ import { AppModule, REQ_KEY } from './app.module';
     AuthTestingModule,
     CoreModule.forRoot([
       {
-        provide: WindowService,
+        provide   : WindowService,
         useFactory: () => window
       },
       {
-        provide: ConsoleService,
+        provide   : ConsoleService,
         useFactory: () => console
       }
     ]),
@@ -38,9 +38,9 @@ import { AppModule, REQ_KEY } from './app.module';
   ],
   providers: [
     {
-      provide: REQUEST,
+      provide   : REQUEST,
       useFactory: (transferState: TransferState) => transferState.get<any>(REQ_KEY, {}),
-      deps: [TransferState]
+      deps      : [TransferState]
     }
   ],
   bootstrap: [AppComponent]
