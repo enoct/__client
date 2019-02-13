@@ -6,50 +6,50 @@ import { LoginComponent } from './login/login.component';
 
 export const routes = [
   {
-    path: 'login',
-    component: LoginComponent,
+    path       : 'login',
+    component  : LoginComponent,
     canActivate: [MetaGuard],
-    data: {
+    data       : {
       meta: {
         title: 'PUBLIC.LOGIN.PAGE_TITLE'
       }
     }
   },
   {
-    path: '',
-    component: MainComponent,
-    children: [
+    path            : '',
+    component       : MainComponent,
+    children        : [
       {
-        path: '',
+        path        : '',
         loadChildren: './+home/home.module#HomeModule'
       },
       {
-        path: 'about',
+        path        : 'about',
         loadChildren: './+about/about.module#AboutModule'
       },
       {
-        path: 'air-universal',
+        path        : 'air-universal',
         loadChildren: './+air-universal/air-universal.module#AirUniversalModule'
       },
       {
-        path: 'secure-page',
+        path        : 'secure-page',
         loadChildren: './+secure/secure.module#SecureModule'
       }
     ],
     canActivateChild: [MetaGuard],
-    data: {
+    data            : {
       i18n: {
         isRoot: true
       }
     }
   },
   {
-    path: 'change-language/:languageCode',
+    path     : 'change-language/:languageCode',
     component: ChangeLanguageComponent
   },
   {
-    path: '**',
+    path      : '**',
     redirectTo: '',
-    pathMatch: 'full'
+    pathMatch : 'full'
   }
 ];
