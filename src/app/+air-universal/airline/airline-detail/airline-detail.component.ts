@@ -9,9 +9,9 @@ import {
   ViewChild
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BaseComponent } from '~/app/framework/core';
-import { UniqueId } from '~/app/framework/ngrx';
-import { getOrNil } from '~/app/shared';
+import { BaseComponent } from '~/@enoct/framework/core';
+import { UniqueId } from '~/@enoct/framework/ngrx';
+import { getOrNil } from '~/@enoct/shared';
 import { Airline, initialAirline } from '~/app/store';
 
 @Component({

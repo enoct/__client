@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '~/app/framework/material';
-import { SharedModule } from '~/app/shared';
-import { CardModule } from '~/app/shared/card/card.module';
-import { DataTableModule } from '~/app/shared/data-table';
+import { MaterialModule } from '~/@enoct/framework/material';
+import { SharedModule } from '~/@enoct/shared';
+import { CardModule } from '~/@enoct/shared/card/card.module';
+import { DataTableModule } from '~/@enoct/shared/data-table';
 
 import { routes } from './air-universal.routes';
 import { AirlineDetailContainerComponent } from './airline/airline-detail/airline-detail-container.component';

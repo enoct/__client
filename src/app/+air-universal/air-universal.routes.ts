@@ -1,4 +1,4 @@
-import { RenderFlag } from '~/app/shared';
+import { RenderFlag } from '~/@enoct/shared';
 
 import { AirlineDetailContainerComponent } from './airline/airline-detail/airline-detail-container.component';
 import { AirlineComponent } from './airline/airline.component';
