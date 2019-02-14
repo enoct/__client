@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/13/19 9:11 PM
+ */
+
 import { baseUrl, browser } from 'e2e-config';
 import { e2e } from '~/@enoct/framework/testing/e2e';
 
