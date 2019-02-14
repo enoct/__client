@@ -1,4 +1,9 @@
-﻿<div class="login mat-elevation-z12">
+﻿<!--
+  ~ Copyright(c) 2019. All rights reserved.
+  ~ Last modified 2/14/19 12:07 PM
+  -->
+
+<div class="login mat-elevation-z12">
   <div class="login__header">{{ 'PUBLIC.LOGIN.LOG_IN' | translate }}</div>
   <form #form="ngForm" fxLayout="column" fxLayoutAlign="start stretch" class="login__body"
         (ngSubmit)="form.valid && login()">

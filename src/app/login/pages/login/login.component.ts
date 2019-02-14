@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 12:07 PM
+ */
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@ngx-auth/core';
