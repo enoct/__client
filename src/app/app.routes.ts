@@ -1,12 +1,12 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 12:07 PM
+ * Last modified 2/14/19 12:23 PM
  */
 
 import { MetaGuard } from '@ngx-meta/core';
 import { ChangeLanguageComponent } from '~/@enoct/framework/i18n';
 
-import { MainComponent } from './layout/main.component';
+import { MainComponent } from './layout/basic/pages/main/main.component';
 import { LoginComponent } from './login/pages/login/login.component';
 
 export const routes = [

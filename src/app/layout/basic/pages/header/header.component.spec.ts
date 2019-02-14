@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 12:25 PM
+ */
+
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';

@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 12:14 PM
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { AuthService } from '@ngx-auth/core';
