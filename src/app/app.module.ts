@@ -1,3 +1,13 @@
+/**
+ * app.module.ts
+ * Created by @anonymoussc on 02/14/2019 11:37 AM.
+ */
+
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 11:37 AM
+ */
+
 import { HttpClient } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { BrowserModule, makeStateKey } from '@angular/platform-browser';
@@ -13,11 +23,11 @@ import {
   PerfectScrollbarConfigInterface,
   PerfectScrollbarModule
 } from 'ngx-perfect-scrollbar';
-import { AnalyticsModule } from '~/app/framework/analytics';
-import { configFactory, CoreModule, metaFactory, SharedModule } from '~/app/framework/core';
-import { HttpInterceptorModule } from '~/app/framework/http';
-import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/app/framework/i18n';
-import { MaterialModule } from '~/app/framework/material';
+import { AnalyticsModule } from '~/@enoct/framework/analytics';
+import { configFactory, CoreModule, metaFactory, SharedModule } from '~/@enoct/framework/core';
+import { HttpInterceptorModule } from '~/@enoct/framework/http';
+import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/@enoct/framework/i18n';
+import { MaterialModule } from '~/@enoct/framework/material';
 import { StoreModule } from '~/app/store';
 
 import { AppComponent } from './app.component';
