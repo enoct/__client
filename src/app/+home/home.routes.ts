@@ -1,4 +1,9 @@
-import { HomeComponent } from './home.component';
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 1:02 PM
+ */
+
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes = [
   {
