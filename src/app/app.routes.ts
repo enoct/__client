@@ -1,5 +1,15 @@
+/**
+ * app.routes.ts
+ * Created by @anonymoussc on 02/14/2019 11:38 AM.
+ */
+
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 11:38 AM
+ */
+
 import { MetaGuard } from '@ngx-meta/core';
-import { ChangeLanguageComponent } from '~/app/framework/i18n';
+import { ChangeLanguageComponent } from '~/@enoct/framework/i18n';
 
 import { MainComponent } from './layout/main.component';
 import { LoginComponent } from './login/login.component';
