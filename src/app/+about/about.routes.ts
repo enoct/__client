@@ -1,7 +1,12 @@
-import { AboutApplePearComponent } from './about-apple-pear.component';
-import { AboutBananaComponent } from './about-banana.component';
-import { AboutUsComponent } from './about-us.component';
-import { AboutComponent } from './about.component';
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 1:16 PM
+ */
+
+import { AboutApplePearComponent } from './pages/about-apple-pear/about-apple-pear.component';
+import { AboutBananaComponent } from './pages/about-banana/about-banana.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes = [
   {

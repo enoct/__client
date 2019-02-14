@@ -1,3 +1,8 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 1:22 PM
+ */
+
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { configureTestSuite } from 'ng-bullet';
@@ -7,18 +12,18 @@ import { I18NTestingModule } from '~/@enoct/framework/i18n/testing';
 import { MaterialModule } from '~/@enoct/framework/material';
 import { t } from '~/@enoct/framework/testing';
 
-import { AboutBananaComponent } from './about-banana.component';
+import { AboutApplePearComponent } from './about-apple-pear.component';
 
 configureTestSuite(() => {
   TestBed.configureTestingModule({
     imports     : [RouterTestingModule, CoreTestingModule, I18NTestingModule, SharedModule, MaterialModule],
-    declarations: [AboutBananaComponent]
+    declarations: [AboutApplePearComponent]
   });
 });
 
-t.describe('AboutBananaComponent', () => {
+t.describe('AboutApplePearComponent', () => {
   t.it('should build without a problem', () => {
-    const fixture  = TestBed.createComponent(AboutBananaComponent);
+    const fixture  = TestBed.createComponent(AboutApplePearComponent);
     const instance = fixture.componentInstance;
     fixture.detectChanges();
 
