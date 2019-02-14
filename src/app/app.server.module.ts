@@ -1,3 +1,13 @@
+/**
+ * app.server.module.ts
+ * Created by @anonymoussc on 02/14/2019 11:45 AM.
+ */
+
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 2/14/19 11:45 AM
+ */
+
 import { APP_BOOTSTRAP_LISTENER, ApplicationRef, NgModule } from '@angular/core';
 import { FlexLayoutServerModule } from '@angular/flex-layout/server';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
