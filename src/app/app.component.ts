@@ -1,11 +1,6 @@
-/**
- * app.component.ts
- * Created by @anonymoussc on 02/14/2019 11:34 AM.
- */
-
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 11:35 AM
+ * Last modified 2/14/19 11:52 AM
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
