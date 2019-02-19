@@ -1,6 +1,6 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 12:23 PM
+ * Last modified 2/19/19 10:01 PM
  */
 
 import { MetaGuard } from '@ngx-meta/core';
@@ -33,8 +33,8 @@ export const routes = [
         loadChildren: './+about/about.module#AboutModule'
       },
       {
-        path        : 'air-universal',
-        loadChildren: './+air-universal/air-universal.module#AirUniversalModule'
+        path        : 'bus-universal',
+        loadChildren: './+bus-universal/bus-universal.module#BusUniversalModule'
       },
       {
         path        : 'secure-page',

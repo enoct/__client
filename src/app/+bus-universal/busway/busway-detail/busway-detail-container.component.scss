@@ -1,0 +1,12 @@
+/*!
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 1/25/19 2:42 PM
+ */
+
+@import '~src/assets/sass/layout/card';
+@import '~src/assets/sass/layout/page';
+@import '~src/assets/sass/layout/tab';
+
+@include page_layout--no-spacing;
+@include tab_layout;
+@include card_layout;

@@ -63,6 +63,20 @@
       "flight": {
         "endpoint": "{baseUrl}/assets/data/flights.json"
       }
+    },
+    "travel"        : {
+      "busway"        : {
+        "endpoint": "{baseUrl}/assets/data/busway.json"
+      },
+      "shelters"      : {
+        "endpoint": "{baseUrl}/assets/data/shelters.json"
+      },
+      "travel-segment": {
+        "endpoint": "{baseUrl}/assets/data/travel-segments.json"
+      },
+      "travels"       : {
+        "endpoint": "{baseUrl}/assets/data/travels.json"
+      }
     }
   }
 }

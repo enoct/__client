@@ -56,7 +56,27 @@
         }
       }
     },
-    "ABOUT": {
+    "BUS_UNIVERSAL": {
+      "BUSWAY": {
+        "MENU_TITLE"      : "Busway",
+        "PAGE_TITLE"      : "Busway",
+        "META_DESCRIPTION": "Bus Universal",
+        "BUSWAY_TABLE"    : {
+          "TITLE"              : "Busway",
+          "ID_COL_TITLE"       : "ID",
+          "IATA_CODE_COL_TITLE": "IATA code",
+          "NAME_COL_TITLE"     : "Busway name",
+          "CREATE"             : "Create a new busway"
+        },
+        "BUSWAY_DETAIL"   : {
+          "MENU_TITLE": "busway",
+          "PAGE_TITLE": "busway",
+          "IATA_CODE" : "IATA code",
+          "NAME"      : "busway name"
+        }
+      }
+    },
+    "ABOUT"        : {
       "ABOUT": {
         "MENU_TITLE": "Hakkında",
         "PAGE_TITLE": "Hakkında",
