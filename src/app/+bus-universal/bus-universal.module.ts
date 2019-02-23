@@ -1,6 +1,6 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/18/19 2:00 PM
+ * Last modified 2/23/19 10:15 PM
  */
 
 import { CommonModule } from '@angular/common';
@@ -13,9 +13,9 @@ import { CardModule } from '~/@enoct/shared/card/card.module';
 import { DataTableModule } from '~/@enoct/shared/data-table';
 
 import { routes } from './bus-universal.routes';
-import { BuswayDetailContainerComponent } from './busway/busway-detail/busway-detail-container.component';
-import { BuswayDetailComponent } from './busway/busway-detail/busway-detail.component';
-import { BuswayComponent } from './busway/busway.component';
+import { BuswayDetailContainerComponent } from './components/containers/busway-detail-container/busway-detail-container.component';
+import { BuswayComponent } from './components/containers/busway/busway.component';
+import { BuswayDetailComponent } from './components/forms/busway-detail/busway-detail.component';
 
 @NgModule({
   imports     : [
