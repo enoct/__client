@@ -1,6 +1,6 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/19/19 3:28 AM
+ * Last modified 2/19/19 11:26 PM
  */
 
 import { CommonModule } from '@angular/common';
@@ -11,8 +11,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreFrameworkModule } from '~/@enoct/framework/store';
 import { environment } from '~/environments/environment';
 
+import { BusUniversalStoreModule } from '../+bus-universal/store';
+
 import { AirUniversalStoreModule } from './air-universal';
-import { BusUniversalStoreModule } from './bus-universal';
 
 @NgModule({
   imports: [
