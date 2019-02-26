@@ -1,6 +1,6 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 12:23 PM
+ * Last modified 2/26/19 7:24 AM
  */
 
 import { HttpClient } from '@angular/common/http';
@@ -29,7 +29,7 @@ import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { HeaderComponent } from './layout/basic/pages/header/header.component';
 import { MainComponent } from './layout/basic/pages/main/main.component';
-import { LoginComponent } from './login/pages/login/login.component';
+import { LoginComponent } from './login/components/pages/login/login.component';
 
 export const REQ_KEY = makeStateKey<string>('req');
 

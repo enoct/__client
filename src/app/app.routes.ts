@@ -1,13 +1,13 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/19/19 10:01 PM
+ * Last modified 2/25/19 5:43 AM
  */
 
 import { MetaGuard } from '@ngx-meta/core';
 import { ChangeLanguageComponent } from '~/@enoct/framework/i18n';
 
 import { MainComponent } from './layout/basic/pages/main/main.component';
-import { LoginComponent } from './login/pages/login/login.component';
+import { LoginComponent } from './login/components/pages/login/login.component';
 
 export const routes = [
   {
