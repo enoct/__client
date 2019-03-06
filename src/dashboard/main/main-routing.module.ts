@@ -1,6 +1,10 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 3/6/19 11:28 AM
+ */
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@ngx-auth/core';
 
 import { MainPageComponent } from './pages/main-page/main-page.component';
 

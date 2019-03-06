@@ -1,6 +1,11 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 3/4/19 10:02 AM
+ */
+
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@ngx-auth/core';
+import { AuthService } from '~/@enoct/framework/auth';
 import { TranslateService } from '@ngx-translate/core';
 import { from as observableFrom, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

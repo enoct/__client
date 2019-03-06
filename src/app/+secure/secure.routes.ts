@@ -1,9 +1,9 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 12:30 PM
+ * Last modified 3/4/19 10:02 AM
  */
 
-import { AuthGuard } from '@ngx-auth/core';
+import { AuthGuard } from '~/@enoct/framework/auth';
 
 import { SecureComponent } from './pages/secure/secure.component';
 

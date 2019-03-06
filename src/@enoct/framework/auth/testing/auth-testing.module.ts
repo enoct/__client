@@ -1,6 +1,13 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 3/6/19 11:28 AM
+ */
+
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { authFactory, AuthLoader, AuthModule } from '@ngx-auth/core';
+import { AuthLoader } from '~/@enoct/framework/auth';
+import { authFactory } from '~/@enoct/framework/auth/auth.factory';
+import { AuthModule } from '~/@enoct/framework/auth/auth.module';
 
 import { MockBackendInterceptor } from './mocks/backend-interceptor.mock';
 import { MockJwtInterceptor } from './mocks/jwt-interceptor.mock';

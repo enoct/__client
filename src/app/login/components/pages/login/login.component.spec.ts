@@ -1,13 +1,13 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 12:07 PM
+ * Last modified 3/4/19 10:02 AM
  */
 
 import { TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AuthService } from '@ngx-auth/core';
+import { AuthService } from '~/@enoct/framework/auth';
 import { TranslatePipe } from '@ngx-translate/core';
 import { configureTestSuite } from 'ng-bullet';
 import { AuthTestingModule } from '~/@enoct/framework/auth/testing';

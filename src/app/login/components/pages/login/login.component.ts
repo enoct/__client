@@ -1,14 +1,14 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/26/19 5:28 AM
+ * Last modified 3/6/19 10:24 AM
  */
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '@ngx-auth/core';
 import { TranslateService } from '@ngx-translate/core';
 import { from as observableFrom, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AuthService } from '~/@enoct/framework/auth';
 import { BaseComponent } from '~/@enoct/framework/core';
 import { routeAnimation } from '~/@enoct/shared';
 
@@ -44,7 +44,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
   }
 
   login(): Observable<boolean> {
-    console.log('test before');
     this.isProcessing = true;
     this.note$        = this.translate.get('PUBLIC.LOGIN.NOTE');
 
@@ -54,7 +53,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
       this.isProcessing = false;
 
       if (!this.auth.isAuthenticated) {
-        console.log('test after error');
         this.error$ = this.translate.get('PUBLIC.LOGIN.ERROR');
       }
     });

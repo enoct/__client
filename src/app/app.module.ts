@@ -1,9 +1,9 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 2/26/19 7:24 AM
+ * Last modified 3/6/19 10:17 AM
  */
 
-import { HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { Injector, NgModule } from '@angular/core';
 import { BrowserModule, makeStateKey } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,7 @@ import {
   PerfectScrollbarModule
 } from 'ngx-perfect-scrollbar';
 import { AnalyticsModule } from '~/@enoct/framework/analytics';
+import { AuthLoader, AuthModule, ErrorInterceptor, JwtInterceptor } from '~/@enoct/framework/auth';
 import { configFactory, CoreModule, metaFactory, SharedModule } from '~/@enoct/framework/core';
 import { HttpInterceptorModule } from '~/@enoct/framework/http';
 import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/@enoct/framework/i18n';
@@ -30,6 +31,7 @@ import { routes } from './app.routes';
 import { HeaderComponent } from './layout/basic/pages/header/header.component';
 import { MainComponent } from './layout/basic/pages/main/main.component';
 import { LoginComponent } from './login/components/pages/login/login.component';
+import { authFactory } from './login/services/auth.factory'
 
 export const REQ_KEY = makeStateKey<string>('req');
 
@@ -40,6 +42,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     BrowserModule.withServerTransition({appId: 'my-app-id'}),
     TransferHttpCacheModule,
     RouterModule.forRoot(routes),
+    AuthModule.forRoot({
+      provide   : AuthLoader,
+      useFactory: (authFactory)
+    }),
     PerfectScrollbarModule,
     AnalyticsModule.forRoot([
       {
@@ -80,7 +86,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     {
       provide : PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
   ],
   exports        : [AppComponent],
   entryComponents: [ChangeLanguageComponent],

@@ -1,6 +1,11 @@
+/*
+ * Copyright(c) 2019. All rights reserved.
+ * Last modified 3/4/19 10:02 AM
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { AuthService } from '@ngx-auth/core';
+import { AuthService } from '~/@enoct/framework/auth';
 import { ConfigService } from '@ngx-config/core';
 import { Observable } from 'rxjs';
 import { BaseComponent } from '~/@enoct/framework/core';
