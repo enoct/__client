@@ -1,6 +1,6 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 3/6/19 10:17 AM
+ * Last modified 3/8/19 2:40 AM
  */
 
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
@@ -19,7 +19,7 @@ import {
   PerfectScrollbarModule
 } from 'ngx-perfect-scrollbar';
 import { AnalyticsModule } from '~/@enoct/framework/analytics';
-import { AuthLoader, AuthModule, ErrorInterceptor, JwtInterceptor } from '~/@enoct/framework/auth';
+import { AuthLoader, AuthModule, RefreshTokenInterceptor, TokenInterceptor } from '~/@enoct/framework/auth';
 import { configFactory, CoreModule, metaFactory, SharedModule } from '~/@enoct/framework/core';
 import { HttpInterceptorModule } from '~/@enoct/framework/http';
 import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/@enoct/framework/i18n';
@@ -87,8 +87,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
       provide : PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: RefreshTokenInterceptor, multi: true},
   ],
   exports        : [AppComponent],
   entryComponents: [ChangeLanguageComponent],

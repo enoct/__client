@@ -1,56 +1,21 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 3/6/19 12:11 PM
+ * Last modified 3/8/19 3:26 AM
  */
 
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 import { AuthLoader } from './../loaders';
 
 @Injectable()
 export class AuthService {
 
-  get defaultUrl(): string {
-    return this.loader.defaultUrl;
-  }
-
-  get isAuthenticated(): boolean {
-    return !!this.loader.storage.getItem(this.loader.storageKey);
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  get token(): string {
-    return this._token;
-  }
-
-  // noinspection JSUnusedGlobalSymbols
-  get redirectUrl(): string {
-    return this._redirectUrl;
-  }
-
-  set redirectUrl(value: string) {
-    this._redirectUrl = value;
-  }
-
   protected _token: string;
   private _redirectUrl: string;
-
-  // noinspection JSUnusedGlobalSymbols
-  protected getHttpParams = (query?: Array<any>): HttpParams => {
-    let res = new HttpParams();
-
-    if (query) {
-      for (const item of query) {
-        res = res.append(item.key, item.value);
-      }
-    }
-
-    return res;
-  };
 
   constructor(
     readonly loader: AuthLoader,
@@ -64,25 +29,25 @@ export class AuthService {
   }
 
   authenticate(username: string, password: string): Observable<boolean> {
-    // noinspection JSUnusedLocalSymbols
     const params = this.getHttpParams(this.loader.backend.params);
 
-    return this.http
-      .post<any>(this.loader.backend.endpoint, {
-        username: username.trim(),
-        password: password.trim(),
-      })
+    return this.fetchToken(username, password)
       .pipe(
-        switchMap(async res => {
-          // noinspection Annotator
-          const token = res && res.access_token;
+        switchMap(async (resToken: { access_token: string }) => {
+          this.loadUser(resToken.access_token)
+            .pipe(
+              map((resUser: { username: string }) => {
+                const token = resToken && resToken.access_token;
 
-          if (token) {
-            this._token = token;
-            this.loader.storage.setItem(this.loader.storageKey, JSON.stringify({username, token}));
+                if (token) {
+                  this._token = token;
 
-            return this.router.navigateByUrl(this._redirectUrl || this.loader.defaultUrl).then(() => true);
-          }
+                  this.storedUserData(resUser.username, token);
+
+                  return this.router.navigateByUrl(this._redirectUrl || this.loader.defaultUrl).then(() => true);
+                }
+              })
+            ).subscribe();
 
           return Promise.resolve(false);
         })
@@ -95,4 +60,72 @@ export class AuthService {
 
     return this.router.navigate(this.loader.loginRoute);
   }
+
+  protected getHttpParams = (query?: Array<any>): HttpParams => {
+    let res = new HttpParams();
+
+    if (query) {
+      for (const item of query) {
+        res = res.append(item.key, item.value);
+      }
+    }
+
+    return res;
+  };
+
+  get defaultUrl(): string {
+    return this.loader.defaultUrl;
+  }
+
+  get isAuthenticated(): boolean {
+    return !!this.loader.storage.getItem(this.loader.storageKey);
+  }
+
+  get token(): string {
+    return this._token;
+  }
+
+  get redirectUrl(): string {
+    return this._redirectUrl;
+  }
+
+  set redirectUrl(value: string) {
+    this._redirectUrl = value;
+  }
+
+  protected fetchToken(username: string, password: string): any {
+    return this.http
+      .post<any>(this.loader.backend.endpoint, {
+        username: username.trim(),
+        password: password.trim(),
+      })
+  }
+
+  storedUserData(username: string, token: string): void {
+    this.loader.storage.setItem(this.loader.storageKey, JSON.stringify(
+      {username, token}
+    ))
+  }
+
+  silentRefresh(): any {
+    return this.http
+      .post<any>('http://localhost:8000/api/login/refresh', {})
+  }
+
+  loadUser(token: string): any {
+    const getHeaders: HttpHeaders = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+    });
+
+    return this.http
+      .get<any>('http://localhost:8000/api/user', {
+        headers: getHeaders
+      })
+  }
 }
+
+/*
+this.homeworld = this.http.get('/api/people/1').pipe(
+      mergeMap(character => this.http.get(character.homeworld))
+    );
+* */

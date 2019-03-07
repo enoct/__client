@@ -1,11 +1,10 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 3/6/19 12:11 PM
+ * Last modified 3/8/19 3:00 AM
  */
 
 export * from './entities';
 export * from './guards';
-export * from './interceptors';
 export * from './services';
 export * from './loaders';
 export { AuthModule } from './auth.module';
