@@ -1,13 +1,13 @@
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 3/8/19 3:26 AM
+ * Last modified 3/8/19 4:30 PM
  */
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { AuthLoader } from './../loaders';
 
@@ -55,6 +55,16 @@ export class AuthService {
   }
 
   async invalidate(): Promise<boolean> {
+    this.logoutUser()
+      .pipe(
+        catchError(
+          // tslint:disable-next-line
+          (error: any): Observable<{}> => {
+            return throwError(error);
+          }
+        )
+      ).subscribe();
+
     this._token = undefined;
     this.loader.storage.removeItem(this.loader.storageKey);
 
@@ -122,10 +132,9 @@ export class AuthService {
         headers: getHeaders
       })
   }
-}
 
-/*
-this.homeworld = this.http.get('/api/people/1').pipe(
-      mergeMap(character => this.http.get(character.homeworld))
-    );
-* */
+  logoutUser(): any {
+    return this.http
+      .post<any>('http://localhost:8000/api/logout', {})
+  }
+}

@@ -5,7 +5,7 @@
 
 /*
  * Copyright(c) 2019. All rights reserved.
- * Last modified 3/8/19 3:23 AM
+ * Last modified 3/8/19 4:31 PM
  */
 
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
@@ -21,6 +21,7 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
   // Refresh Token Subject tracks the current token, or is null if no token is currently
   // available (e.g. refresh pending).
   // noinspection TsLint
+  // tslint:disable-next-line
   private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   constructor(public authService: AuthService) {}
@@ -64,6 +65,7 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
 
             // Set the refreshTokenSubject to null so that subsequent API calls will wait until the new token has been retrieved
             // noinspection TsLint
+            // tslint:disable-next-line
             this.refreshTokenSubject.next(null);
 
             // Call authService.refreshAccessToken(this is an Observable that will be returned)
@@ -97,7 +99,7 @@ export class RefreshTokenInterceptor implements HttpInterceptor {
               )
           }
         })
-      )
+      ) as any
   }
 
   addAuthenticationToken(request: HttpRequest<any>): any {
