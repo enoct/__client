@@ -1,7 +1,7 @@
 {
   "APP_NAME"                : "signoir/angband",
   "DEFAULT_TITLE"           : "showcasing the app",
-  "DEFAULT_META_DESCRIPTION": "open-source seed project for Angular",
+  "DEFAULT_META_DESCRIPTION": "Description",
   "PUBLIC"                  : {
     "SHARED"       : {
       "ACTION"    : {
@@ -109,9 +109,9 @@
     "SECURE"       : {
       "MENU_TITLE"      : "Secure page",
       "PAGE_TITLE"      : "Secure page",
-      "META_DESCRIPTION": "You shouldn't be here",
+      "META_DESCRIPTION": "authorized personnel only",
       "CARD_TITLE"      : "Secure page",
-      "CARD_SUBTITLE"   : "You shouldn't be here"
+      "CARD_SUBTITLE"   : "authorized personnel only"
     }
   }
 }
