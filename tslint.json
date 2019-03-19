@@ -23,21 +23,8 @@
     "use-view-encapsulation": false,
     "angular-whitespace": [true, "check-interpolation", "check-semicolon"],
     "directive-selector": [true, "attribute", ["app", "routerLink"], "kebab-case"],
-    "component-selector": [
-      true,
-      "element",
-      [
-        "app",
-        "i18n",
-        "router"
-      ],
-      "kebab-case"
-    ],
-    "comment-type": [
-      true,
-      "singleline",
-      "multiline",
-      "doc"
-    ]
+    "component-selector": [true, "element", ["app", "i18n", "router"], "kebab-case"],
+    "comment-type": [true, "singleline", "multiline", "doc"],
+    "no-console": false
   }
 }
