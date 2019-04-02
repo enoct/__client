@@ -1,17 +1,12 @@
-/*
- * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 11:52 AM
- */
-
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ConfigService } from '@ngx-config/core';
-import { BaseComponent } from '~/@enoct/framework/core';
+import { BaseComponent } from '~/app/framework/core';
 import { languageActions, State } from '~/app/store';
 
 @Component({
-  selector       : 'app-root',
-  templateUrl    : './app.component.html',
+  selector: 'app-root',
+  templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent extends BaseComponent implements OnInit {

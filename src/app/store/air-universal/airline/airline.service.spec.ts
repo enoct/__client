@@ -1,15 +1,15 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { CoreTestingModule } from '~/@enoct/framework/core/testing';
-import { EMPTY_UNIQUE_ID } from '~/@enoct/framework/ngrx';
-import { t } from '~/@enoct/framework/testing';
+import { CoreTestingModule } from '~/app/framework/core/testing';
+import { EMPTY_UNIQUE_ID } from '~/app/framework/ngrx';
+import { t } from '~/app/framework/testing';
 
 import { AirlineService } from './airline.service';
 import { MOCK_AIRLINE, MOCK_AIRLINES } from './testing';
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
-    imports  : [HttpClientTestingModule, CoreTestingModule],
+    imports: [HttpClientTestingModule, CoreTestingModule],
     providers: [AirlineService]
   });
 };
@@ -38,7 +38,7 @@ t.describe('airline: AirlineService', () => {
         http
           .expectOne({
             method: 'GET',
-            url   : '{baseUrl}/assets/data/airlines.json'
+            url: '{baseUrl}/assets/data/airlines.json'
           })
           .flush(MOCK_AIRLINES);
         http.verify();
@@ -58,7 +58,7 @@ t.describe('airline: AirlineService', () => {
         http
           .expectOne({
             method: 'GET',
-            url   : '{baseUrl}/assets/data/airlines.json'
+            url: '{baseUrl}/assets/data/airlines.json'
           })
           .flush(MOCK_AIRLINES);
         http.verify();

@@ -1,4 +1,4 @@
-import { BaseDocument } from '~/@enoct/framework/ngrx';
+import { BaseDocument } from '~/app/framework/ngrx';
 
 import { Airline } from './airline';
 import { Airport } from './airport';

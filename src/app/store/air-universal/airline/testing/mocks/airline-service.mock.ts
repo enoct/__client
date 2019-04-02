@@ -1,6 +1,6 @@
 import { Observable, of as observableOf, throwError } from 'rxjs';
-import { UniqueId } from '~/@enoct/framework/ngrx';
-import { ERROR__NO_PAYLOAD } from '~/@enoct/shared';
+import { UniqueId } from '~/app/framework/ngrx';
+import { ERROR__NO_PAYLOAD } from '~/app/shared';
 
 import { Airline } from '../../airline.model';
 import { MOCK_AIRLINE, MOCK_AIRLINES } from '../common';
@@ -19,9 +19,9 @@ export class MockAirlineService {
   getOne$(id: UniqueId): Observable<Airline> {
     return !this.isFailing
       ? observableOf({
-        ...MOCK_AIRLINE,
-        _id: id
-      })
+          ...MOCK_AIRLINE,
+          _id: id
+        })
       : throwError(ERROR__NO_PAYLOAD);
   }
 

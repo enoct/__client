@@ -1,8 +1,7 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
-import { UniqueId } from '~/@enoct/framework/ngrx';
+import { UniqueId } from '~/app/framework/ngrx';
 
 import { Airline } from './airline.model';
-
 export const AIRLINE = 'flight--airline';
 
 export interface State extends EntityState<Airline> {
@@ -16,7 +15,7 @@ export const adapter: EntityAdapter<Airline> = createEntityAdapter<Airline>({
 });
 
 export const initialState: State = adapter.getInitialState({
-  selectedId  : undefined,
+  selectedId: undefined,
   isProcessing: false,
-  error       : undefined
+  error: undefined
 });

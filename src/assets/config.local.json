@@ -22,8 +22,8 @@
         "culture": "en-US"
       },
       {
-        "code"   : "id",
-        "name"   : "Indonesia",
+        "code": "id",
+        "name": "Indonesia",
         "culture": "id-ID"
       }
     ],
@@ -38,13 +38,13 @@
       "ROOT.ABOUT.APPLE.PEAR": "pear",
       "CHANGE_LANGUAGE": "change-language"
     },
-    "id": {
-      "ROOT.ABOUT"           : "Tentang",
-      "ROOT.ABOUT.US"        : "Kami",
-      "ROOT.ABOUT.BANANA"    : "Pisang",
-      "ROOT.ABOUT.APPLE"     : "Apel",
-      "ROOT.ABOUT.APPLE.PEAR": "Pir",
-      "CHANGE_LANGUAGE"      : "rubah-bahasa"
+    "tr": {
+      "ROOT.ABOUT": "hakkinda",
+      "ROOT.ABOUT.US": "biz",
+      "ROOT.ABOUT.BANANA": "muz",
+      "ROOT.ABOUT.APPLE": "elma",
+      "ROOT.ABOUT.APPLE.PEAR": "armut",
+      "CHANGE_LANGUAGE": "dil-secimi"
     }
   },
   "backend": {
@@ -62,20 +62,6 @@
       },
       "flight": {
         "endpoint": "{baseUrl}/assets/data/flights.json"
-      }
-    },
-    "travel"        : {
-      "busway"        : {
-        "endpoint": "{baseUrl}/assets/data/+bus-universal/busway.json"
-      },
-      "shelters"      : {
-        "endpoint": "{baseUrl}/assets/data/+bus-universal/shelters.json"
-      },
-      "travel-segment": {
-        "endpoint": "{baseUrl}/assets/data/+bus-universal/travel-segments.json"
-      },
-      "travels"       : {
-        "endpoint": "{baseUrl}/assets/data/+bus-universal/travels.json"
       }
     }
   }

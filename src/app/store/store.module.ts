@@ -1,17 +1,10 @@
-/*
- * Copyright(c) 2019. All rights reserved.
- * Last modified 2/19/19 11:26 PM
- */
-
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule as NgrxStoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { StoreFrameworkModule } from '~/@enoct/framework/store';
+import { StoreFrameworkModule } from '~/app/framework/store';
 import { environment } from '~/environments/environment';
-
-import { BusUniversalStoreModule } from '../+bus-universal/store';
 
 import { AirUniversalStoreModule } from './air-universal';
 
@@ -22,8 +15,7 @@ import { AirUniversalStoreModule } from './air-universal';
     EffectsModule.forRoot([]),
     !environment.production && environment.hasStoreDevTools ? StoreDevtoolsModule.instrument() : [],
     StoreFrameworkModule.forRoot(),
-    AirUniversalStoreModule,
-    BusUniversalStoreModule
+    AirUniversalStoreModule
   ]
 })
 export class StoreModule {

@@ -6,16 +6,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { getOr, isNil } from 'lodash/fp';
 import { Observable, of as observableOf, zip } from 'rxjs';
 import { skipWhile, switchMap, takeUntil } from 'rxjs/operators';
-import { BaseContainerComponent } from '~/@enoct/framework/core';
-import { UniqueId } from '~/@enoct/framework/ngrx';
-import { RenderFlag, routeAnimation } from '~/@enoct/shared';
+import { BaseContainerComponent } from '~/app/framework/core';
+import { UniqueId } from '~/app/framework/ngrx';
+import { RenderFlag, routeAnimation } from '~/app/shared';
 import { Airline, airlineActions, AirlineSelectors, State } from '~/app/store';
 
 @Component({
-  templateUrl    : './airline-detail-container.component.html',
-  styleUrls      : ['./airline-detail-container.component.scss'],
+  templateUrl: './airline-detail-container.component.html',
+  styleUrls: ['./airline-detail-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations     : [routeAnimation]
+  animations: [routeAnimation]
 })
 export class AirlineDetailContainerComponent extends BaseContainerComponent implements OnInit {
   airline$: Observable<Airline>;
@@ -35,8 +35,8 @@ export class AirlineDetailContainerComponent extends BaseContainerComponent impl
     this.baseRoute = ['/', 'air-universal', 'airlines'];
 
     this.isProcessing$ = this.store$.pipe(select(AirlineSelectors.getIsProcessing));
-    this.error$        = this.store$.pipe(select(AirlineSelectors.getError));
-    this.airline$      = this.store$.pipe(select(AirlineSelectors.getSelected));
+    this.error$ = this.store$.pipe(select(AirlineSelectors.getError));
+    this.airline$ = this.store$.pipe(select(AirlineSelectors.getSelected));
 
     this.airline$
       .pipe(
@@ -67,7 +67,7 @@ export class AirlineDetailContainerComponent extends BaseContainerComponent impl
       airlineActions.airUniversalDeleteOneAirline({
         id,
         router: this.router,
-        route : this.baseRoute
+        route: this.baseRoute
       })
     );
   }
@@ -79,7 +79,7 @@ export class AirlineDetailContainerComponent extends BaseContainerComponent impl
           airlineActions.airUniversalCreateOneAirline({
             resource,
             router: this.router,
-            route : this.baseRoute
+            route: this.baseRoute
           })
         );
       } else {
@@ -87,7 +87,7 @@ export class AirlineDetailContainerComponent extends BaseContainerComponent impl
           airlineActions.airUniversalUpdateOneAirline({
             resource,
             router: this.router,
-            route : this.baseRoute
+            route: this.baseRoute
           })
         );
       }

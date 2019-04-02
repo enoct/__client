@@ -1,18 +1,13 @@
-/*
- * Copyright(c) 2019. All rights reserved.
- * Last modified 2/14/19 1:02 PM
- */
-
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './home.component';
 
 export const routes = [
   {
-    path     : '',
+    path: '',
     component: HomeComponent,
-    data     : {
+    data: {
       meta: {
-        title      : 'PUBLIC.HOME.PAGE_TITLE',
-        override   : true,
+        title: 'PUBLIC.HOME.PAGE_TITLE',
+        override: true,
         description: 'PUBLIC.HOME.META_DESCRIPTION'
       }
     }

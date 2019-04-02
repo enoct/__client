@@ -62,6 +62,7 @@
     "@nguniversal/common": "~7.0.2",
     "@nguniversal/express-engine": "~7.0.2",
     "@nguniversal/module-map-ngfactory-loader": "~7.0.2",
+    "@ngx-auth/core": "~7.0.0",
     "@ngx-cache/core": "~7.0.0",
     "@ngx-cache/fs-storage": "~7.0.0",
     "@ngx-cache/platform-browser": "~7.0.0",
