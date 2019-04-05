@@ -1,6 +1,6 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { authFactory, AuthLoader, AuthModule } from '@ngx-auth/core';
+import { authFactory, AuthLoader, AuthModule } from '~/@enoct/framework/auth';
 
 import { MockBackendInterceptor } from './mocks/backend-interceptor.mock';
 import { MockJwtInterceptor } from './mocks/jwt-interceptor.mock';

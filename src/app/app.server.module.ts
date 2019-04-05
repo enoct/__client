@@ -4,12 +4,12 @@ import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
-import { AuthModule } from '@ngx-auth/core';
 import { CACHE, CacheService, STORAGE } from '@ngx-cache/core';
 import { fsStorageFactory, FsStorageLoader, FsStorageService } from '@ngx-cache/fs-storage';
 import { FsCacheService, ServerCacheModule } from '@ngx-cache/platform-server';
 import * as express from 'express';
 import { filter, first } from 'rxjs/operators';
+import { AuthModule } from '~/@enoct/framework/auth';
 
 import { AppComponent } from './app.component';
 import { AppModule, REQ_KEY } from './app.module';

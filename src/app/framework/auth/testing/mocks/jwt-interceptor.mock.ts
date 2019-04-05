@@ -1,6 +1,6 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthLoader } from '@ngx-auth/core';
+import { AuthLoader } from '~/@enoct/framework/auth';
 import { flow, get } from 'lodash/fp';
 import { Observable } from 'rxjs';
 

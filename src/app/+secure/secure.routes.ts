@@ -1,4 +1,4 @@
-import { AuthGuard } from '@ngx-auth/core';
+import { AuthGuard } from '~/@enoct/framework/auth';
 
 import { SecureComponent } from './secure.component';
 
