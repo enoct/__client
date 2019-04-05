@@ -8163,6 +8163,16 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
+primeicons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-1.0.0.tgz#90061f168ef6227f21f0a7db8204ffa85cd27aec"
+  integrity sha512-p/hzIjUVccW4eJPhuORHI3AUkDpqfvCQVrjxbFEejnTEdWY4C8fomVfjiaA9jCu83fSQnBHuRIGB96iAR8R6uA==
+
+primeng@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-7.1.0.tgz#6aa19f6867e9724b71713634412da1cd7b6fa638"
+  integrity sha512-uUkiKtGjCJN4Hz5fKliiw8/UvkOC7RV4oWOmoDY1el2Y2NDCyQIUI9t4QbyoPeyZzL1CggBbFsVPkqnQg+oVxA==
+
 private@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
